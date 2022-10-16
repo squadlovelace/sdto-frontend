@@ -5,20 +5,27 @@
     "node": true
   },
   "extends": [
-    "eslint-plugin-import-helpers",
     "plugin:@typescript-eslint/recommended",
+    "airbnb",
+    "airbnb-typescript",
     "prettier"
   ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "tsconfig.json",
+    "tsconfigRootDir": "__dirname",
     "ecmaFeatures": {
       "jsx": true
     },
     "ecmaVersion": 12,
     "sourceType": "module"
   },
-  "plugins": ["@typescript-eslint"],
+  "plugins": [
+    "eslint-plugin-import-helpers",
+    "react",
+    "@typescript-eslint",
+    "prettier"
+  ],
   "rules": {
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",

@@ -1,5 +1,5 @@
-const teste = 'dududu';
 const teste2 = 'hdhdhhd';
+const teste = 'jjj';
 function App() {
   return <h1>Hello world!</h1>;
 }

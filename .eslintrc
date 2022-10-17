@@ -4,6 +4,7 @@
     "es2021": true,
     "node": true
   },
+
   "extends": [
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
@@ -33,6 +34,7 @@
     "react/react-in-jsx-scope": "off",
     "import/prefer-default-export": "off",
     "react/function-component-definition": "off",
+    "eslint(import/no-import-module-exports": "off",
     "import-helpers/order-imports": [
       "warn",
       {

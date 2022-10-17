@@ -1,3 +1,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .H1 {
+    @apply font-body font-bold text-x7 leading-x5;
+  }
+  .H2 {
+    @apply font-body font-semibold text-x6 leading-x4;
+  }
+  .H3 {
+    @apply font-body font-bold text-x5 leading-x3;
+  }
+
+  .H5 {
+    @apply font-body font-bold text-x2 leading-x2;
+  }
+  .H4 {
+    @apply font-body font-bold text-x4
+    leading-x2;
+  }
+
+  .legenda {
+    @apply font-text font-normal text-x2
+    leading-x2;
+  }
+
+  .texto {
+    @apply font-text font-normal text-x4
+    leading-x3;
+  }
+
+  .textoPequeno {
+    @apply font-text  font-normal text-x1
+    leading-x1;
+  }
+
+  .link {
+    @apply font-text font-normal text-x2 leading-x2 underline;
+  }
+  .butao {
+    @apply font-body font-semibold text-x3 leading-x2;
+  }
+
+  .butaoPequeno {
+    @apply font-body font-semibold text-x2 leading-x1;
+  }
+}

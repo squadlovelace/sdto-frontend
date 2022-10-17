@@ -1,7 +1,7 @@
-const teste2 = 'hdhdhhd';
-const teste = 'jjj';
+export const teste = 'teste';
+
 function App() {
-  return <h1>Hello world!</h1>;
+  return <h1 className="text-6xl text-red-600">Hello world!</h1>;
 }
 
 export default App;

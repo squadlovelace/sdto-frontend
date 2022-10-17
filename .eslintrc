@@ -6,6 +6,7 @@
   },
   "extends": [
     "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
     "airbnb",
     "airbnb-typescript",
     "prettier"
@@ -13,19 +14,20 @@
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "tsconfig.json",
-    "tsconfigRootDir": "__dirname",
     "ecmaFeatures": {
       "jsx": true
     },
     "ecmaVersion": 12,
     "sourceType": "module"
   },
+
   "plugins": [
     "eslint-plugin-import-helpers",
     "react",
     "@typescript-eslint",
     "prettier"
   ],
+  "ignorePatterns": ["tailwind.config.js", "postcss.config.js"],
   "rules": {
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",

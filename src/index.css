@@ -39,11 +39,14 @@
   .link {
     @apply font-text font-normal text-x2 leading-x2 underline;
   }
-  .butao {
-    @apply font-body font-semibold text-x3 leading-x2;
+  .botao {
+    @apply font-body font-semibold text-x3 leading-x2 bg-slate-800;
   }
 
-  .butaoPequeno {
+  .botaoPequeno {
     @apply font-body font-semibold text-x2 leading-x1;
+  }
+  .cartao {
+    @apply w-60 rounded-md p-2 shadow grid gap-y-2 bg-yellow-400;
   }
 }

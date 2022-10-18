@@ -34,7 +34,8 @@
     "react/react-in-jsx-scope": "off",
     "import/prefer-default-export": "off",
     "react/function-component-definition": "off",
-    "eslint(import/no-import-module-exports": "off",
+    "no-import-module-exports": "off",
+    "import/no-named-as-default": "off",
     "import-helpers/order-imports": [
       "warn",
       {

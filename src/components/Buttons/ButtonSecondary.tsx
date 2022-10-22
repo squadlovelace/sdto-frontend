@@ -7,7 +7,7 @@ interface Props {
 const ButtonSecondary = ({ children }: Props) => (
   <button
     type="button"
-    className="flex flex-row justify-center items-center px-2 py-3 gap-2 w-32 h-9 bg-white rounded-3xl font-text font-normal text-x4 text-roxo65 leading-6"
+    className="flex flex-row justify-center items-center py-2.5 px-8 bg-white rounded-3xl font-inter font-semibold text-x3 leading-x1.5 capitalize text-roxo65 "
   >
     {children}
   </button>

@@ -4,6 +4,7 @@ module.exports = {
   theme: {
     fontFamily: {
       body: ['Raleway', 'sans-serif'],
+      inter: ['Inter', 'sans-serif'],
       text: ['Lato', 'sans-serif'],
     },
     fontSize: {
@@ -28,10 +29,20 @@ module.exports = {
         x4: '48pt',
         x3: '32pt',
         x2: '24pt',
+        'x1.5': '19px',
         x1: '16pt',
       },
       height: {
-        '18': '72px',
+        4.8: '19px',
+        5.5: '22px',
+        18: '72px',
+        22: '84pX',
+      },
+      padding: {
+        2.5: '10px',
+      },
+      spacing: {
+        '200px': '200px',
       },
     },
   },

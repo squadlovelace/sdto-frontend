@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  important: true,
   theme: {
     fontFamily: {
       body: ['Raleway', 'sans-serif'],
@@ -8,10 +9,12 @@ module.exports = {
       text: ['Lato', 'sans-serif'],
     },
     fontSize: {
+      x9: '60px',
       x7: '42pt',
+      'x6.5': '36px',
       x6: '32pt',
       x5: '26pt',
-      x4: '18pt',
+      x4: '18px',
       x3: '16pt',
       x2: '14pt',
       x1: '12pt',
@@ -19,30 +22,56 @@ module.exports = {
     extend: {
       colors: {
         white: '#fff',
-        roxo74: '#410033',
-        roxo65: '#672557',
-        roxo20: '#cbacc2',
-        rosa20: '#eac0cb',
+        roxo800: '#3a0136',
+        roxo500: '#672557',
+        roxo200: '#cbacc2',
       },
+
       lineHeight: {
         x5: '64pt',
+        'x4.5': '60px',
         x4: '48pt',
         x3: '32pt',
         x2: '24pt',
         'x1.5': '19px',
         x1: '16pt',
+        5.5: '22px',
+        6.5: '26px',
+        50: '50px',
+      },
+      margin: {
+        15: '60px',
+        30: '120px',
       },
       height: {
         4.8: '19px',
         5.5: '22px',
         18: '72px',
         22: '84pX',
+        200: '200px',
+        111: '447.67px',
+        184: '736px',
+        376: '376px',
       },
       padding: {
         2.5: '10px',
+        30: '120px',
       },
       spacing: {
         '200px': '200px',
+        17: '17px',
+        35: '35px',
+        88: '88px',
+        108: '108px',
+        114: '114px',
+        146: '146px',
+        180: '180px',
+        231: '231px',
+        260: '260px',
+        272: '272px',
+        340: '340px',
+        360: '360px',
+        760: '760px',
       },
     },
   },

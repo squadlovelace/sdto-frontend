@@ -46,7 +46,7 @@
   .botaoPequeno {
     @apply font-body font-semibold text-x2 leading-x1;
   }
-  .cartao {
-    @apply w-60 rounded-md p-2 shadow grid gap-y-2 bg-yellow-400;
+  .cardImg {
+    @apply flex flex-col justify-end;
   }
 }

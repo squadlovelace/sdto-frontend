@@ -7,7 +7,7 @@ import LiNavbar from '../LiNavbar';
 
 export function Header() {
   return (
-    <header className="bg-roxo65">
+    <header className="bg-roxo500">
       <nav className="flex justify-between mx-200px  h-22 items-center">
         <Link to="/">
           <img src={Logo} alt="Logo" className="h-5.5" />

@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    @apply h-32 scrollbar-thin scrollbar-thumb-roxo800  scrollbar-track-roxo200 overflow-y-scroll scrollbar-thumb-rounded-full scrollbar-track-rounded-full;
+  }
+}
+
 @layer components {
   .H1 {
     @apply font-body font-bold text-x7 leading-x5;
@@ -48,5 +54,8 @@
   }
   .cardImg {
     @apply flex flex-col justify-end;
+  }
+  .header {
+    @apply fixed top-0 left-0 w-['100%'] h-['80px'] bg-roxo800 leading-['80px'] shadow-['5px_5px_15px_-5px_#01d29344'] z-['999'];
   }
 }

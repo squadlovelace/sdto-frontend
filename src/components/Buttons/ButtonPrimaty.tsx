@@ -7,7 +7,7 @@ interface Props {
 const ButtonPrimaty = ({ children }: Props) => (
   <button
     type="button"
-    className="flex flex-row justify-center items-center py-2 px-3 w-32 h-9 font-text font-bold leading-6 text-x4 text-white gap-2  rounded-3xl border-white border-solid border-2"
+    className="flex flex-row justify-center items-center py-2.5 px-8 bg-roxo500 rounded-3xl font-inter font-semibold text-x3 leading-x1.5 capitalize text-white border-2 "
   >
     {children}
   </button>

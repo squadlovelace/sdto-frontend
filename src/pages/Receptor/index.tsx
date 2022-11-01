@@ -1,7 +1,7 @@
 import React from 'react';
 
 import FormReceptor from '../../components/CardsForm/CadReceptor/formR';
-import FooterForm from '../../components/FooterForm/footerForm';
+import FooterForm from '../../components/FooterForm';
 import HeaderReceptor from '../../components/HeaderReceptor/headerReceptor';
 
 class CadReceptor extends React.Component {
@@ -11,7 +11,6 @@ class CadReceptor extends React.Component {
         <HeaderReceptor />
 
         <FormReceptor />
-
         <FooterForm />
       </>
     );

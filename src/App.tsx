@@ -1,16 +1,18 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Home from './pages/Home/Layout';
-import Login from './pages/Login';
-import Register from './pages/Register';
+import FormInst from './pages/Institution';
+import CadReceptor from './pages/Receptor';
+import RegisterDonator from './pages/RegisterDonator';
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="login" element={<Login />} />
+        <Route path="/registerdonator" element={<RegisterDonator />} />
+        <Route path="/forminst" element={<FormInst />} />
+        <Route path="/formreceptor" element={<CadReceptor />} />
       </Routes>
     </BrowserRouter>
   );

@@ -33,17 +33,10 @@ const FormDoador = () => {
 
       const { cnpj, razao } = formState;
       if (!cnpj || razao) window.alert('preencha os todos os campos');
+      //* substitua o alert por toast, vai deixar o visual mais bonito
     },
     [formState]
   );
-
-  const steps = [
-    { id: 1, name: 'fisrt' },
-    { id: 2, name: 'second' },
-    { id: 3, name: 'third' },
-  ];
-
-  const [step, setStep] = useState(steps[0].name);
 
   const getStep = () => {
     setStep(steps[1].name);

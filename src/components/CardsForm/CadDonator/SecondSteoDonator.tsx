@@ -5,7 +5,7 @@ interface Props {
 const SecondSteoDonator = ({ handleStep }: Props) => (
   <div>
     <button type="submit" onClick={handleStep}>
-      segundo
+      Segundo Passo
     </button>
   </div>
 );

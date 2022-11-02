@@ -7,7 +7,9 @@ interface Props {
 
 const TextTitle = ({ textInfo, title }: Props) => (
   <div>
-    <h1>{title}</h1>
+    <h1 className="font-body font-bold text-[30px] leading-[42px] text-roxo800">
+      {title}
+    </h1>
     <p>{textInfo}</p>
   </div>
 );

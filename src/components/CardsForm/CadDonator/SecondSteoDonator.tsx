@@ -1,11 +1,11 @@
 interface Props {
-  handleStep: () => void;
+  handleStep: (i: number) => void;
 }
 
 const SecondSteoDonator = ({ handleStep }: Props) => (
   <div>
-    <button type="submit" onClick={handleStep}>
-      Segundo Passo
+    <button type="submit" onClick={() => handleStep(1)}>
+      Terceiro Passo
     </button>
   </div>
 );

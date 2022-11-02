@@ -15,18 +15,12 @@ const RegisterDonator = () => {
   const handleStep = (i: number) => {
     setStep(steps[i].name);
   };
-  const handleStepTwo = () => {
-    setStep(steps[1].name);
-  };
-  const handleStepoTree = () => {
-    setStep(steps[2].name);
-  };
 
   return (
     <>
       {step === 'fisrt' && <FisrtStepDonator handleStep={handleStep} />}
-      {step === 'second' && <SecondSteoDonator handleStep={handleStepoTree} />}
-      {step === 'third' && <ThirdDonator handleStep={handleStepoOne} />}
+      {step === 'second' && <SecondSteoDonator handleStep={handleStep} />}
+      {step === 'third' && <ThirdDonator handleStep={handleStep} />}
     </>
   );
 };

@@ -1,11 +1,11 @@
 interface Props {
-  handleStep: () => void;
+  handleStep: (i: number) => void;
 }
 
 const ThirdDonator = ({ handleStep }: Props) => (
   <div>
-    <button type="submit" onChange={handleStep}>
-      passo2
+    <button type="submit" onChange={() => handleStep(1)}>
+      ir para o passo2
     </button>
   </div>
 );

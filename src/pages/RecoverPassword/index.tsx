@@ -1,15 +1,15 @@
 import DivPurple from '../../components/DivPurple/DivPurple';
 import DivInfo from '../../components/FormsAcccess/DivInfo';
 import FooterFormAccces from '../../components/FormsAcccess/FooterFormAccces';
-import SectionFormInfo from '../../components/FormsAcccess/FormLoginAccess';
+import FormRecoverAccess from '../../components/FormsAcccess/FormRecoverAccess';
 import HeaderFormAccess from '../../components/FormsAcccess/HeaderFormAccess';
 
-const Login = () => (
+const RecoverPassword = () => (
   <div className="flex  w-[100%] h-[100vh]">
     <section className="w-[74%]">
       <HeaderFormAccess />
       <DivInfo>
-        <SectionFormInfo />
+        <FormRecoverAccess />
       </DivInfo>
       <FooterFormAccces />
     </section>
@@ -17,4 +17,4 @@ const Login = () => (
   </div>
 );
 
-export default Login;
+export default RecoverPassword;

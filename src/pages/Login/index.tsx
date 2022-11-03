@@ -5,7 +5,7 @@ import SectionFormInfo from '../../components/FormsAcccess/FormLoginAccess';
 import HeaderFormAccess from '../../components/FormsAcccess/HeaderFormAccess';
 
 const Login = () => (
-  <div className="flex  w-[100%] ">
+  <div className="flex  w-[100%] h-[100vh]]">
     <section className="w-[74%]">
       <HeaderFormAccess />
       <DivInfo>

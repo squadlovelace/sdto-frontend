@@ -18,10 +18,10 @@ export function Header() {
           <LiNavbar href="#quemsomos" textLink="Quem somos" />
           <div className="flex flex-row items-center gap-8">
             <ButtonPrimaty>
-              <Link to="register">Cadastrar</Link>
+              <Link to="/register">Cadastrar</Link>
             </ButtonPrimaty>
             <ButtonSecondary>
-              <Link to="login">Entrar</Link>
+              <Link to="/login">Entrar</Link>
             </ButtonSecondary>
           </div>
         </ul>

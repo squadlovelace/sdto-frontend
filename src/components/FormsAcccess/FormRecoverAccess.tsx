@@ -3,7 +3,7 @@ import InputFormACcces from './InputFormACcces';
 import TextTitle from './TextTitle';
 
 const FormRecoverAccess = () => (
-  <section className="pb-[280px]">
+  <section className="pb-[240px]">
     <TextTitle
       title="Recuperação de senha"
       textInfo="Informe os dados abaixo e receba em seu e-mail cadastrado instruções para recuperar seu acesso."

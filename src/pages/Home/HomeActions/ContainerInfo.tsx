@@ -20,7 +20,7 @@ const ContainerInfo = ({
   const [showInfo, setShowInfo] = useState(false);
 
   return (
-    <div className="bg-white w-760">
+    <div className="bg-white w-760 rounded-md">
       <div className="flex justify-between ml-8 mr-5 py-5 my-auto">
         <h1 className="font-text font-extrabold text-x4 leading-6 text-roxo500 ">
           {title}

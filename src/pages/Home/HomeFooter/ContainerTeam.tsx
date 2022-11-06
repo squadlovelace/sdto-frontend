@@ -20,7 +20,7 @@ const ContainerTeam = () => (
         icon={linkendin}
         alt="icone do linkendin"
         name="André Fontenele"
-        href="hhttps://www.linkedin.com/in/andreluizfontenele//"
+        href="https://www.linkedin.com/in/andreluizfontenele/"
       />
     </div>
     <div>
@@ -40,7 +40,7 @@ const ContainerTeam = () => (
         icon={linkendin}
         alt="icone do linkendin"
         name="Fernanda Costa"
-        href="https://www.linkedin.com/"
+        href="https://www.linkedin.com/in/fernandacostads/"
       />
     </div>
     <div>

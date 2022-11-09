@@ -1,21 +1,10 @@
-import React, { useCallback, useState } from 'react';
+import React, { useState } from 'react';
 import InputDate from '../Inputs/InputDate';
 import InputItems from '../Inputs/InputItems';
 import InputName from '../Inputs/InputName';
 import * as yup from 'yup';
 
-interface IFormState {
-  cnpj: string;
-  razao: string;
-  email: string;
-  cep: string;
-  cidade: string;
-  rg: string;
-  telefone: string;
-  cpf: string;
-  data: string;
-}
-const FormDoador2 = () => {
+const BodySecondStep = () => {
   const [user, setUser] = useState({
     nome: '',
     rg: '',
@@ -87,7 +76,7 @@ const FormDoador2 = () => {
     }
   }
   return (
-    <>
+    <div>
       <div className="globe flex">
         <div className="container  grid-cols-8 mx-auto pt-5">
           <form onSubmit={addUser}>
@@ -97,15 +86,14 @@ const FormDoador2 = () => {
                 placeholder={'Digite seu Nome'}
                 value={user.nome}
                 onChange={valueInput}
-              ></InputName>
-
+              />
               <InputItems
                 type={'text'}
                 textLabel={'RG'}
                 placeholder={'Digite seu RG'}
                 value={user.rg}
                 onChange={valueInput}
-              ></InputItems>
+              />
 
               <InputItems
                 type={'text'}
@@ -113,7 +101,7 @@ const FormDoador2 = () => {
                 placeholder={'( _ _ ) _ _ _ _ _ _ _ _ _'}
                 value={user.telefone}
                 onChange={valueInput}
-              ></InputItems>
+              />
 
               <InputItems
                 type={'text'}
@@ -121,7 +109,7 @@ const FormDoador2 = () => {
                 placeholder={'Digite seu CPF'}
                 value={user.cpf}
                 onChange={valueInput}
-              ></InputItems>
+              />
 
               <InputItems
                 type={'text'}
@@ -129,7 +117,7 @@ const FormDoador2 = () => {
                 placeholder={'Digite a cidade onde você reside'}
                 value={user.cidade}
                 onChange={valueInput}
-              ></InputItems>
+              />
 
               <InputDate
                 type={'date'}
@@ -137,12 +125,13 @@ const FormDoador2 = () => {
                 placeholder={''}
                 value={user.data}
                 onChange={valueInput}
-              ></InputDate>
+              />
             </div>
           </form>
         </div>
       </div>
-    </>
+    </div>
   );
 };
-export default FormDoador2;
+
+export default BodySecondStep;

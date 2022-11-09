@@ -6,7 +6,6 @@ const InputItems3 = ({
   textLabel,
   name,
   type,
- 
 }: ItemInputProps) => (
   <div className="w-full md:w-1/6 px-3 pt-4">
     <label

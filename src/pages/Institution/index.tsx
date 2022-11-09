@@ -6,11 +6,8 @@ class CadInst extends React.Component {
   render() {
     return (
       <>
-        <Header></Header>
-
-        <FormInst></FormInst>
-        
-        
+        <Header />
+        <FormInst />
       </>
     );
   }

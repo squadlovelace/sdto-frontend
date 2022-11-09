@@ -1,16 +1,24 @@
-import FormDoador2 from "./formD2";
+import { FunctionComponent } from 'react';
+import Step2 from '../../../assets/step2.png';
+import DivPurple from '../../DivPurple/DivPurple';
+import FooterForm from '../FooterForm';
+import HeadeForm from '../HeaderForm';
 
-interface Props {
-  handleStep: () => void;
-}
+import BodySecondStep from './BodySecondStep';
 
-const SecondSteoDonator = ({ handleStep }: Props) => (
-  <div>
-    <button type="submit" onClick={handleStep}>
-      <FormDoador2></FormDoador2>
-      
-    </button>
-  </div>
-);
+const FisrtStepDonator: FunctionComponent<{
+  handleStep: (i: number) => void;
+}> = (props) => {
+  return (
+    <div className="flex  w-[100%] h-[100vh]">
+      <section className="w-[74%]">
+        <HeadeForm img={Step2} alt="passo 1" />
+        <BodySecondStep {...props} />
+        <FooterForm />
+      </section>
+      <DivPurple />
+    </div>
+  );
+};
 
-export default SecondSteoDonator;
+export default FisrtStepDonator;

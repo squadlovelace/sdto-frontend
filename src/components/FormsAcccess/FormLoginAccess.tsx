@@ -1,6 +1,6 @@
 import ButtonFormAccces from '../Buttons/ButtonFormAccces';
 import InputFormACcces from './InputFormACcces';
-import TextTitle from './TextTitle';
+import TextTitle from '../TextTitle/TextTitle';
 
 const SectionFormInfo = () => (
   <section>

@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@mui/icons-material": "^5.10.9",
+    "date-fns": "^2.29.3",
     "react": "^18.2.0",
+    "react-day-picker": "^8.3.6",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2"
   },

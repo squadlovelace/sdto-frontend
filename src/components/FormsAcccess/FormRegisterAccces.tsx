@@ -4,7 +4,7 @@ import Donator from '../../assets/donator.png';
 import Instituition from '../../assets/institution.png';
 import Receiver from '../../assets/receiver.png';
 import CardFormOption from './CardFormOption';
-import TextTitle from './TextTitle';
+import TextTitle from '../TextTitle/TextTitle';
 
 const FormRegisterAccces = () => (
   <section className="ml-[200px] mr-[180px] mb-[70px]">

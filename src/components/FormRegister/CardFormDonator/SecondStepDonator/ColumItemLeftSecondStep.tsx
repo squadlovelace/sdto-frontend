@@ -1,28 +1,38 @@
-import React from 'react';
+import { useForm } from 'react-hook-form';
 import InputItem from '../../Inputs/InputItem';
-import InputSelect from '../../Inputs/InputSelect';
+import SelectGenre from './SelectGenre';
 
-const ColumItemLeftSecondStep = () => {
+interface ISelectedValues {
+  genre: string;
+}
+
+const ColumItemLeftSecondStep = ({ errors, control }) => {
+  const { register } = useForm<ISelectedValues>();
+
   return (
     <div className="flex flex-col flex-1">
       <InputItem
         htmlFor="endereco"
         placeholder="Digite seu endereço"
         textLabel="Endereço"
+        errors={errors}
+        control={control}
       />
-      <InputItem htmlFor="cep" placeholder="Digite o seu CEP" textLabel="CEP" />
+      <InputItem
+        htmlFor="cep"
+        placeholder="Digite o seu CEP"
+        textLabel="CEP"
+        errors={errors}
+        control={control}
+      />
       <InputItem
         htmlFor="telefone"
         placeholder="(__) _ ____-____"
         textLabel="Telefone"
+        errors={errors}
+        control={control}
       />
-      <InputSelect htmlFor="genero" textLabel="Gênero" name="genre">
-        <option disabled value="default">
-          Qual é o seu gênero
-        </option>
-        <option value="masculino">Masculino</option>
-        <option value="feminino">Feminino</option>
-      </InputSelect>
+      <SelectGenre />
     </div>
   );
 };

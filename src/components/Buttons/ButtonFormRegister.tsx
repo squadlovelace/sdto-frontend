@@ -1,7 +1,7 @@
 interface Props {
   type: 'button' | 'submit';
   text: string;
-  handleStep: () => void;
+  handleStep?: () => void;
 }
 
 const ButtonFormRegister = ({ text, type, handleStep }: Props) => {

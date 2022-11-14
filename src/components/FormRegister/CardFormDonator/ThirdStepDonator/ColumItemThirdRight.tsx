@@ -6,7 +6,10 @@ const ColumItemRight = () => {
   return (
     <div className="flex flex-col flex-1">
       <SelectedTypeDonator />
-      <InputWithinLabel placeholder="Orgãos selecionados" />
+      <InputWithinLabel
+        placeholder="Orgãos selecionados"
+        inputName="organsselected"
+      />
     </div>
   );
 };

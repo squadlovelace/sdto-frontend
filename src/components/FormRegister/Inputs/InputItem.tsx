@@ -1,18 +1,69 @@
-import { InputProps } from '../../../interfaces/inputs';
+import { TextField } from '@mui/material';
+import { Controller } from 'react-hook-form';
+import { styled } from '@mui/material/styles';
+import { makeStyles } from '@mui/styles';
+import { InputFirtStep } from '../../../interfaces/registerType';
 
-const InputItem = ({ textLabel, placeholder, htmlFor }: InputProps) => {
+const CssTextField = styled(TextField)({
+  '& .MuiInputBase-input': {
+    fontSize: 18,
+    fontFamily: ['Lato', 'Roboto'],
+    color: '#672557',
+    lineHeight: 25,
+  },
+
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      borderColor: '#dbdbdb',
+      borderRadius: 7,
+      border: '2px solid #dbdbdb',
+      position: 'absolute',
+    },
+    '&:hover fieldset': {
+      borderColor: '#dbdbdb',
+    },
+    '&.Mui-focused fieldset': {
+      borderColor: '#672557',
+    },
+  },
+});
+
+const useStyles = makeStyles((theme) => ({
+  helperText: {
+    position: 'absolute',
+    bottom: '-20px',
+  },
+}));
+
+const InputItem = ({ htmlFor, placeholder, textLabel, errors, control }) => {
+  const classes = useStyles();
   return (
-    <div className="flex flex-col gap-[10px] mb-5">
-      <label htmlFor={htmlFor}>
-        <span className="font-text font-normal text-x4 leading-[25px] text-roxo800">
-          {textLabel}
-        </span>
-      </label>
-      <input
-        type="text"
-        placeholder={placeholder}
-        id={htmlFor}
-        className="border-2 border-solid rounded-[7px] border-[#DBDBDB] focus:outline-none focus:ring-roxo500 focus:border-roxo500 focus:border-2 font-text font-normal text-x4 leading-[25px] p-[18px] py-[11px] text-roxo500"
+    <div className="flex flex-col gap-[10px] mb-8">
+      <Controller
+        control={control}
+        name={htmlFor}
+        defaultValue=""
+        render={({ field }) => (
+          <>
+            <label htmlFor={htmlFor}>
+              <span className="font-text font-normal text-x4 leading-[25px] text-roxo800">
+                {textLabel}
+              </span>
+            </label>
+            <CssTextField
+              placeholder={placeholder}
+              id={htmlFor}
+              className="font-text font-normal text-x4 leading-[25px]  text-roxo500"
+              {...field}
+              fullWidth
+              error={!!errors[htmlFor]}
+              helperText={errors[htmlFor] ? errors[htmlFor].message : ''}
+              FormHelperTextProps={{
+                className: classes.helperText,
+              }}
+            />
+          </>
+        )}
       />
     </div>
   );

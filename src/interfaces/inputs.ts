@@ -10,3 +10,7 @@ export interface InputProps {
 export interface InputSelectProps extends InputProps {
   children: ReactNode;
 }
+
+export interface RegisterDonator {
+  register: InputProps;
+}

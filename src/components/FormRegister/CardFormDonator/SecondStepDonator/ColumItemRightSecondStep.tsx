@@ -2,7 +2,7 @@ import React from 'react';
 import InputDate from '../../Inputs/InputDate';
 import InputItem from '../../Inputs/InputItem';
 
-const ColumItemRightSecondStep = () => {
+const ColumItemRightSecondStep = ({ errors, control }) => {
   return (
     <div className="flex flex-col flex-1">
       <div className="grid grid-cols-3 gap-4">
@@ -11,15 +11,25 @@ const ColumItemRightSecondStep = () => {
             htmlFor="cidade"
             textLabel="Cidade"
             placeholder="Digite a cidade em que reside"
+            errors={errors}
+            control={control}
           />
         </div>
-        <InputItem htmlFor="uf" textLabel="UF" placeholder="Digite a UF" />
+        <InputItem
+          htmlFor="uf"
+          textLabel="UF"
+          placeholder="Digite a UF"
+          errors={errors}
+          control={control}
+        />
       </div>
 
       <InputItem
         htmlFor="COMPLEMENTO"
         textLabel="Complemento"
         placeholder="Digite o complemento"
+        errors={errors}
+        control={control}
       />
       <InputDate htmlFor="birthday" textLabel="Data de Nascimento" />
     </div>

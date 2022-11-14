@@ -10,7 +10,6 @@ const FormDonator = () => {
     { id: 3, name: 'third' },
   ];
   const [step, setStep] = useState(steps[0].name);
-
   const handleStep = (i: number) => {
     setStep(steps[i].name);
   };

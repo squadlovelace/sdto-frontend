@@ -1,25 +1,33 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import { InputProps } from '../../../../interfaces/inputs';
-import InputSelect from '../../Inputs/InputSelect';
+import Select from 'react-select';
+import { customStyles, theme } from '../../Inputs/customStylesSelect';
+import { OrganOptions } from './DataOptions/DataOrgan';
+import makeAnimated from 'react-select/animated';
 
-const SelectedOrgan = () => {
-  const { register } = useForm<InputProps>();
+const animatedComponents = makeAnimated();
 
+const SelectOrgan = ({ errors, control, htmlFor, textLabel }) => {
   return (
-    <InputSelect
-      htmlFor="organ"
-      textLabel="Orgão"
-      name="organ"
-      register={register}
-    >
-      <option disabled value="default">
-        Qual é o seu tipo sanguineo
-      </option>
-      <option value="coracao">Coração</option>
-      <option value="rim">Rim</option>
-    </InputSelect>
+    <div className="flex flex-col gap-[10px] mb-5">
+      <label
+        htmlFor={htmlFor}
+        className="font-text font-normal text-x4 leading-[25px] text-roxo800"
+      >
+        {textLabel}
+      </label>
+      <Select
+        className="bg-white font-text font-normal text-x4 text-roxo500 "
+        classNamePrefix="genero"
+        components={animatedComponents}
+        defaultValue={OrganOptions[0]}
+        placeholder="Qual é o orgão que você nessecita?"
+        name="genero"
+        options={OrganOptions}
+        styles={customStyles}
+        theme={theme}
+        isMulti
+      />
+    </div>
   );
 };
 
-export default SelectedOrgan;
+export default SelectOrgan;

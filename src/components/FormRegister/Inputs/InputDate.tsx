@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { InputProps } from '../../../interfaces/inputs';
 
-const InputDate = ({ htmlFor, textLabel }: InputProps) => {
+const InputDate = ({ htmlFor, textLabel, errors, control }: InputProps) => {
   const { register } = useForm<InputProps>();
 
   return (

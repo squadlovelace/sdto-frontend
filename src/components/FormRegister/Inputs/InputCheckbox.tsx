@@ -6,18 +6,12 @@ interface Props {
   nameInput: string;
 }
 
-const InputCheckbox = ({ htmlFor, textLabel, nameInput }: Props) => {
+const InputCheckbox = ({ htmlFor, textLabel, nameInput, errors, control }) => {
   const { register } = useForm<Props>();
 
   return (
     <div className="flex gap-3 mt-[20px] ">
-      <input
-        type="checkbox"
-        id={htmlFor}
-        value={htmlFor}
-        className="h-8 w-8"
-        {...register('htmlFor')}
-      />
+      <input type="checkbox" id={htmlFor} value={htmlFor} className="h-8 w-8" />
       <label
         htmlFor={htmlFor}
         className="font-text font-bold text-x2 leading-5 text-roxo800"

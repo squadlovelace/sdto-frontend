@@ -1,14 +1,11 @@
-import { useForm } from 'react-hook-form';
 import InputItem from '../../Inputs/InputItem';
-import SelectGenre from './SelectGenre';
+import { SelectGenre } from './SelectGenre';
 
 interface ISelectedValues {
   genre: string;
 }
 
 const ColumItemLeftSecondStep = ({ errors, control }) => {
-  const { register } = useForm<ISelectedValues>();
-
   return (
     <div className="flex flex-col flex-1">
       <InputItem
@@ -32,7 +29,12 @@ const ColumItemLeftSecondStep = ({ errors, control }) => {
         errors={errors}
         control={control}
       />
-      <SelectGenre />
+      <SelectGenre
+        errors={errors}
+        control={control}
+        htmlFor="genero"
+        textLabel="Gênero"
+      />
     </div>
   );
 };

@@ -25,13 +25,18 @@ const ColumItemRightSecondStep = ({ errors, control }) => {
       </div>
 
       <InputItem
-        htmlFor="COMPLEMENTO"
+        htmlFor="complemento"
         textLabel="Complemento"
         placeholder="Digite o complemento"
         errors={errors}
         control={control}
       />
-      <InputDate htmlFor="birthday" textLabel="Data de Nascimento" />
+      <InputDate
+        htmlFor="datadenascimento"
+        textLabel="Data de Nascimento"
+        errors={errors}
+        control={control}
+      />
     </div>
   );
 };

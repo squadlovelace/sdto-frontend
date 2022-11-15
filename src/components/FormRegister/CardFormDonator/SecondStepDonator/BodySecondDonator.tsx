@@ -12,30 +12,20 @@ import { IFormValuegFirstStep } from '../../../../interfaces/registerType';
 
 const schema = yup.object({
   nome: yup.string().required('O campo é obrigatório!'),
-  email: yup
+  endereco: yup.string().required('O campo é obrigatório!'),
+  cep: yup
     .string()
-    .email('digite um email válido')
+    .min(8, 'O CEP deve conter oito digitos')
     .required('O campo é obrigatório!'),
-  senha: yup
+  telefone: yup
     .string()
-    .min(6, 'A senha deve conter seis digitos')
+    .min(9, 'O campo telefone deve ter nove digítos')
     .required('O campo é obrigatório!'),
-  confirmarSenha: yup
-    .string()
-    .required('O campo é obrigatório!')
-    .oneOf([yup.ref('senha')], 'As senhas precisam ser iguais'),
-  confirmarEmail: yup
-    .string()
-    .required('O campo é obrigatório!')
-    .oneOf([yup.ref('email')], 'Os email precisam ser iguais'),
-  cpf: yup
-    .string()
-    .min(11, 'O cpf deve ter 11 digitos!')
-    .required('O campo é obrigatório!'),
-  rg: yup
-    .string()
-    .min(8, 'O RG deve ter 8 digítos!')
-    .required('O campo é obrigatório!'),
+  cidade: yup.string().required('O campo é obrigatório!'),
+  uf: yup.string().required('O campo é obrigatório!'),
+  complemento: yup.string().required('O campo é obrigatório!'),
+  datadenascimento: yup.string().required('O campo é obrigatório!'),
+  genero: yup.string().required('O campo é obrigatório!'),
 });
 
 const BodySecondDonator: FunctionComponent<{

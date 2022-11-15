@@ -1,4 +1,5 @@
 import { InputProps } from '../../../interfaces/inputs';
+import './style.css';
 
 const InputDate = ({ htmlFor, textLabel }: InputProps) => {
   return (

@@ -10,12 +10,6 @@ export const ColumItemLeft = ({ errors, control }) => {
         htmlFor="tiposanguineo"
         textLabel={'Tipo sanguíneo'}
       />
-      <SelectedOrgan
-        errors={errors}
-        control={control}
-        htmlFor="orgao"
-        textLabel="Orgão"
-      />
     </div>
   );
 };

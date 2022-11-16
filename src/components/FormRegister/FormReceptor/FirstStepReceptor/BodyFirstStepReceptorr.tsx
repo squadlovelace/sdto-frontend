@@ -18,7 +18,7 @@ const BodyFirstStepDonator: FunctionComponent<{
       <section className="formSteps flex flex-col">
         <TextTitle
           title="Cadastre-se como um receptor"
-          textInfo="Preencha os campos a seguir com as suas informações dos dados de doador que queira cadastrar"
+          textInfo="Preencha os campos a seguir com as suas informações dos dados de recptor que queira cadastrar"
         />
         <InputName
           htmlFor="Name"

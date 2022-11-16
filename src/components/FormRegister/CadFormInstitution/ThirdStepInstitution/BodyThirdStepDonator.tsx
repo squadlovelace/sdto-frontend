@@ -18,7 +18,7 @@ const BodyThirdtStepInstitution: FunctionComponent<{
       </div>
       <section className="formSteps flex flex-col ">
         <TextTitle
-          title="Cadastre-se como um doador"
+          title="Cadastre-se como um instituição"
           textInfo="Preencha os campos a seguir com as suas informações para cadastrar-se."
         />
 

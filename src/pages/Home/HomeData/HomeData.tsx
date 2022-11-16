@@ -6,7 +6,7 @@ import ilustrationData from '../../../assets/ilustration-data.png';
 import ContainerData from './ContainerData';
 
 const HomeData = () => (
-  <section className="flex my-180 mx-231 gap-10 items-center">
+  <section className="flex justify-center my-180 mx-231 gap-10 items-center">
     <div className="flex flex-col gap-35">
       <ContainerData
         src={icon01}
@@ -29,7 +29,7 @@ const HomeData = () => (
         text="Mais de 59 mil pessoas estão na fila de espera por um órgão."
       />
 
-      <p className="font-text text-x2 leading-5 text-roxo800">
+      <p className="font-text text-x1 leading-5 text-roxo800">
         <span className="font-bold">Fonte:</span> Diário do Nordeste, Ministério
         da Saúde
       </p>

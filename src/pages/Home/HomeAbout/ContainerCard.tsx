@@ -15,7 +15,7 @@ const ContainerCard = () => (
     <div className="flex gap-[140px]">
       <CardAbout
         title="Qual o nosso objetivo?"
-        text="Ajudar a difundir a doação e transplante de órgãos, como também formar uma comunidade de doadores e pessoas interessadas na temática"
+        text="Ajudar a difundir a doação e transplante de órgãos, como também formar uma comunidade de doadores e pessoas interessadas na temática. "
       />
       <CardAbout
         title="O que fazemos?"

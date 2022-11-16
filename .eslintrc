@@ -4,8 +4,10 @@
     "es2021": true,
     "node": true
   },
+
   "extends": [
     "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
     "airbnb",
     "airbnb-typescript",
     "prettier"
@@ -13,24 +15,27 @@
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "project": "tsconfig.json",
-    "tsconfigRootDir": "__dirname",
     "ecmaFeatures": {
       "jsx": true
     },
     "ecmaVersion": 12,
     "sourceType": "module"
   },
+
   "plugins": [
     "eslint-plugin-import-helpers",
     "react",
     "@typescript-eslint",
     "prettier"
   ],
+  "ignorePatterns": ["tailwind.config.js", "postcss.config.js"],
   "rules": {
     "react/jsx-props-no-spreading": "off",
     "react/react-in-jsx-scope": "off",
     "import/prefer-default-export": "off",
     "react/function-component-definition": "off",
+    "no-import-module-exports": "off",
+    "import/no-named-as-default": "off",
     "import-helpers/order-imports": [
       "warn",
       {

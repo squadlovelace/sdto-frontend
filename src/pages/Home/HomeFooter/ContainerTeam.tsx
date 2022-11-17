@@ -2,12 +2,12 @@ import linkendin from '../../../assets/linkedin.png';
 import LinkTeam from './LinkTeam';
 
 const ContainerTeam = () => (
-  <div className="flex gap-5">
+  <div className="flex gap-14">
     <div>
       <LinkTeam
         icon={linkendin}
         alt="icone do linkendin"
-        name="Ana Julia ALencar"
+        name="Ana Júlia Alencar"
         href="https://www.linkedin.com/in/ana-j%C3%BAlia-alencar/"
       />
       <LinkTeam
@@ -20,7 +20,7 @@ const ContainerTeam = () => (
         icon={linkendin}
         alt="icone do linkendin"
         name="André Fontenele"
-        href="hhttps://www.linkedin.com/in/andreluizfontenele//"
+        href="https://www.linkedin.com/in/andreluizfontenele/"
       />
     </div>
     <div>
@@ -40,7 +40,7 @@ const ContainerTeam = () => (
         icon={linkendin}
         alt="icone do linkendin"
         name="Fernanda Costa"
-        href="https://www.linkedin.com/"
+        href="https://www.linkedin.com/in/fernandacostads/"
       />
     </div>
     <div>

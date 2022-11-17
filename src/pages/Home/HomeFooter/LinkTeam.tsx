@@ -12,7 +12,7 @@ const LinkTeam = ({ icon, name, alt, href }: Props) => (
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="font-body font-semibold text-x3 leading-[23px] text-white"
+      className="font-text font-regular text-x2 leading-[23px] text-white"
     >
       {name}
     </a>

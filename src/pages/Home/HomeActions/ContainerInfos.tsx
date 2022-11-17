@@ -6,7 +6,8 @@ const ContainerInfos = () => (
   <div className="flex flex-col gap-5 mb-32 mx-340">
     <ContainerInfo
       title="Quero ser doador. O que faço?"
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla scelerisque libero tempus, eleifend arcu nec, convallis dui. Maecenas ut commodo metus, vel aliquam neque. Pellentesque a consequat turpis, non euismod enim. Ut convallis sem vitae turpis interdum, ac convallis justo mollis."
+      text="A primeira coisa a fazer é informar a sua família sobre a sua vontade, pois, após a sua morte, os familiares podem autorizar a doação e retirada dos órgãos e tecidos.
+      Mesmo que uma pessoa tenha dito em vida que gostaria de ser doador, a doação só acontece se a família autorizar.  Após a morte encefálica, a família é entrevistada por uma equipe de profissionais da saúde, informando-os sobre o processo de doação e transplante e solicitação do consentimento para doação."
       iconplus={iconPlus}
       altPlus="icone mais"
       iconMinus={iconMinus}
@@ -14,7 +15,9 @@ const ContainerInfos = () => (
     />
     <ContainerInfo
       title="Quais as restrições para doar?"
-      text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla scelerisque libero tempus, eleifend arcu nec, convallis dui. Maecenas ut commodo metus, vel aliquam neque. Pellentesque a consequat turpis, non euismod enim. Ut convallis sem vitae turpis interdum, ac convallis justo mollis."
+      text="Portadores de doenças infectocontagiosas, como soropositivos ao HIV, hepatites B e C, Doença de Chagas, entre outras.
+      Pessoas com doenças degenerativas crônicas ou tumores malignos.
+      Pacientes em coma ou que tenham sepse ou insuficiência de múltiplos órgãos e sistemas (IMOS)."
       iconplus={iconPlus}
       altPlus="icone mais"
       iconMinus={iconMinus}

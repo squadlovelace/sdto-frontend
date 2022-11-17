@@ -10,8 +10,8 @@ interface Props {
 }
 
 const CardLink = ({ img, text, alt, link, cardInstitution }: Props) => (
-  <div className="h-360 w-260  bg-roxo500">
-    <div className={`bg-white h-200 mx-auto ${cardInstitution} `}>
+  <div className="h-360 w-260 rounded-lg	 bg-roxo500">
+    <div className={`bg-white h-200 rounded-t-lg	mx-auto ${cardInstitution} `}>
       <img
         src={img}
         height="190px"

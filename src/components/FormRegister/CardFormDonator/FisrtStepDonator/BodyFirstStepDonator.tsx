@@ -1,5 +1,5 @@
 import { SubmitHandler, useForm, UseFormRegister } from 'react-hook-form';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import ButtonFormRegister from '../../../Buttons/ButtonFormRegister';
 import TextTitle from '../../../TextTitle/TextTitle';
@@ -13,8 +13,6 @@ import ColumItemRight from './ColumItemRight';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import InputItem from '../../Inputs/InputItem';
-
-import { cpf } from 'cpf-cnpj-validator';
 
 interface Props {
   handleStep: (i: number) => void;
@@ -58,15 +56,20 @@ const BodyFirstStepDonator = ({ handleStep }: Props) => {
     mode: 'onChange',
     resolver: yupResolver(schema),
   });
+  const navigate = useNavigate();
 
-  const onSubmit: SubmitHandler<IFormValuegFirstStep> = (data) => {
+  const onSubmit: SubmitHandler<IFormValuegFirstStep> = (data, e) => {
+    e?.preventDefault();
     console.log({ data });
 
     console.log('deu certo');
-
+    navigate('/');
     reset();
   };
 
+  const teste = () => {
+    console.log('teste');
+  };
   return (
     <>
       <Link to="/">
@@ -91,15 +94,13 @@ const BodyFirstStepDonator = ({ handleStep }: Props) => {
           <ColumItemLeft errors={errors} control={control} />
           <ColumItemRight errors={errors} control={control} />
         </div>
-        {/*       <button type="submit" onClick={() => handleStep(1)}>
-          passar
-        </button> */}
-
+        <button type="submit">passar</button>
+        {/*
         <ButtonFormRegister
           text="Confirmar e continuar"
           type="submit"
           handleStep={() => handleStep(1)}
-        />
+        /> */}
       </form>
     </>
   );

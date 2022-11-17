@@ -7,7 +7,7 @@ interface Props {
 const ContainerData = ({ src, alt, text }: Props) => (
   <div className="flex items-center gap-x-17 ">
     <img src={src} alt={alt} width="116px" />
-    <p className="font-text font-semibold text-x3 leading-5.5 text-roxo500">
+    <p className="font-text max-w-xs font-semibold text-x3 leading-5.5 text-roxo500">
       {text}
     </p>
   </div>

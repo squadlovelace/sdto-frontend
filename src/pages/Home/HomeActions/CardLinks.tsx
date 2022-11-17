@@ -9,14 +9,14 @@ const CardLinks = () => (
       img={iconACtion1}
       alt="icone de uma mão segurando um coração"
       text="Está interessado em doar orgãos?"
-      link="Cadastrar Doador"
+      link="Cadastrar-se"
     />
 
     <CardLink
       img={iconACtion3}
       alt="icone de mão segurando uma caixa com documentos de doações"
       text="Procura doadores pra sua instituição?"
-      link="Cadastrar Instituição"
+      link="Cadastrar-se"
       cardInstitution="cardImg"
     />
 

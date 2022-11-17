@@ -4,7 +4,7 @@ interface Props {
 }
 
 const LiNavbar = ({ href, textLink }: Props) => (
-  <li className="font-inter font-semibold text-x3 capitalize text-white h-10 leading-x1.5">
+  <li className="font-inter font-semibold text-x2 capitalize text-white h-10 leading-x1.5">
     <a href={href}>{textLink}</a>
   </li>
 );

@@ -4,21 +4,17 @@ import SecondStepDonator from '../../components/FormRegister/CardFormDonator/Sec
 import ThirdStepDonator from '../../components/FormRegister/CardFormDonator/ThirdStepDonator';
 
 const FormDonator = () => {
-  const steps = [
-    { id: 1, name: 'fisrt' },
-    { id: 2, name: 'second' },
-    { id: 3, name: 'third' },
-  ];
-  const [step, setStep] = useState(steps[0].name);
+  const steps = [1, 2, 3];
+  const [step, setStep] = useState(steps[0]);
   const handleStep = (i: number) => {
-    setStep(steps[i].name);
+    setStep(steps[i]);
   };
 
   return (
     <>
-      {step === 'fisrt' && <FisrtStepDonator handleStep={handleStep} />}
-      {step === 'second' && <SecondStepDonator handleStep={handleStep} />}
-      {step === 'third' && <ThirdStepDonator handleStep={handleStep} />}
+      {step === 1 && <FisrtStepDonator handleStep={handleStep} />}
+      {step === 2 && <SecondStepDonator handleStep={handleStep} />}
+      {step === 3 && <ThirdStepDonator handleStep={handleStep} />}
     </>
   );
 };

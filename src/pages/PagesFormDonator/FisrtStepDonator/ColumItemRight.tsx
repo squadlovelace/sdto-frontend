@@ -1,5 +1,5 @@
-import { RegisterFisrtStepProps } from '../../../../interfaces/registerType';
-import InputItem from '../../Inputs/InputItem';
+import { RegisterFisrtStepProps } from '../../../interfaces/registerType';
+import InputItem from '../../../components/FormRegister/Inputs/InputItem';
 
 const ColumItemRight = ({ errors, control }: RegisterFisrtStepProps) => {
   return (

@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react';
 import Step3 from '../../../../assets/Step3.png';
-import DivPurple from '../../../DivPurple/DivPurple';
-import FooterFormAccces from '../../../FormsAcccess/FooterFormAccces';
-import HeaderFormRegister from '../../HeaderFormRegister';
+import DivPurple from '../../../components/DivPurple/DivPurple';
+import FooterFormAccces from '../../../components/FormsAcccess/FooterFormAccces';
+import HeaderFormRegister from '../../../components/FormRegister/HeaderFormRegister';
 import BodyThirdtStepDonator from './BodyThirdStepDonator';
 
 const ThirdStepDonator: FunctionComponent<{

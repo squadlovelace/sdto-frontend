@@ -1,5 +1,5 @@
-import InputItem from '../../Inputs/InputItem';
-import InputWithinLabel from '../../Inputs/InputWithinLabel';
+import InputItem from '../../../components/FormRegister/Inputs/InputItem';
+import InputWithinLabel from '../../../components/FormRegister/Inputs/InputWithinLabel';
 import SelectedTypeDonator from './SelectedTypeDonator';
 
 const ColumItemRight = ({ errors, control }) => {

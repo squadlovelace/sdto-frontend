@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import FisrtStepDonator from '../../components/FormRegister/CardFormDonator/FisrtStepDonator';
-import SecondStepDonator from '../../components/FormRegister/CardFormDonator/SecondStepDonator';
-import ThirdStepDonator from '../../components/FormRegister/CardFormDonator/ThirdStepDonator';
+import FisrtStepDonator from '../PagesFormDonator/FisrtStepDonator';
+import SecondStepDonator from '../PagesFormDonator/SecondStepDonator';
+import ThirdStepDonator from '../PagesFormDonator/ThirdStepDonator';
 
 const FormDonator = () => {
   const steps = [1, 2, 3];

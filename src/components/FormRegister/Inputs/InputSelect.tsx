@@ -1,9 +1,22 @@
-import { useForm } from 'react-hook-form';
+import {
+  FormControl,
+  InputLabel,
+  MenuItem,
+  Select,
+  SelectChangeEvent,
+} from '@mui/material';
+import { Box } from '@mui/system';
+import { useState } from 'react';
 import { InputSelectProps } from '../../../interfaces/inputs';
 
 const InputSelect = ({ htmlFor, textLabel, children }: InputSelectProps) => {
+  const [value, setValue] = useState<string>('');
+  const handleChange = (event: SelectChangeEvent) => {
+    setValue(event.target.value as string);
+  };
+
   return (
-    <div className="flex flex-col gap-[10px] mb-5">
+    /*     <div className="flex flex-col gap-[10px] mb-5">
       <label
         htmlFor={htmlFor}
         className="font-text font-normal text-x4 leading-[25px] text-roxo800"
@@ -18,7 +31,24 @@ const InputSelect = ({ htmlFor, textLabel, children }: InputSelectProps) => {
       >
         {children}
       </select>
-    </div>
+    </div> */
+
+    <Box sx={{ minWidth: 120 }}>
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Age</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={value}
+          label="Genero"
+          onChange={handleChange}
+        >
+          <MenuItem value={10}>Ten</MenuItem>
+          <MenuItem value={20}>Twenty</MenuItem>
+          <MenuItem value={30}>Thirty</MenuItem>
+        </Select>
+      </FormControl>
+    </Box>
   );
 };
 

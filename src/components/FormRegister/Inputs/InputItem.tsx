@@ -2,7 +2,6 @@ import { TextField } from '@mui/material';
 import { Controller } from 'react-hook-form';
 import { styled } from '@mui/material/styles';
 import { makeStyles } from '@mui/styles';
-import { InputFirtStep } from '../../../interfaces/registerType';
 
 const CssTextField = styled(TextField)({
   '& .MuiInputBase-input': {

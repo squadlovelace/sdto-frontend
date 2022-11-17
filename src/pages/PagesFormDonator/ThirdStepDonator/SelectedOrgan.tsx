@@ -1,5 +1,8 @@
 import Select from 'react-select';
-import { customStyles, theme } from '../../Inputs/customStylesSelect';
+import {
+  customStyles,
+  theme,
+} from '../../../components/FormRegister/Inputs/customStylesSelect';
 import { OrganOptions } from './DataOptions/DataOrgan';
 import makeAnimated from 'react-select/animated';
 

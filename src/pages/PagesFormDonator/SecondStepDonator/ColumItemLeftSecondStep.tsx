@@ -1,9 +1,6 @@
-import InputItem from '../../Inputs/InputItem';
+import InputItem from '../../../components/FormRegister/Inputs/InputItem';
+import InputSelect from '../../../components/FormRegister/Inputs/InputSelect';
 import { SelectGenre } from './SelectGenre';
-
-interface ISelectedValues {
-  genre: string;
-}
 
 const ColumItemLeftSecondStep = ({ errors, control }) => {
   return (
@@ -29,7 +26,15 @@ const ColumItemLeftSecondStep = ({ errors, control }) => {
         errors={errors}
         control={control}
       />
+      /*{' '}
       <SelectGenre
+        errors={errors}
+        control={control}
+        htmlFor="genero"
+        textLabel="Gênero"
+      />{' '}
+      */
+      <InputSelect
         errors={errors}
         control={control}
         htmlFor="genero"

@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import Select from 'react-select';
-import { customStyles, theme } from '../../Inputs/customStylesSelect';
+import {
+  customStyles,
+  theme,
+} from '../../../components/FormRegister/Inputs/customStylesSelect';
 import { TypeBloodOptions } from './DataOptions/DataTypeBlood';
 
 const SelectedTypeBlood = ({ errors, control, htmlFor, textLabel }) => {

@@ -1,10 +1,13 @@
 import { useForm } from 'react-hook-form';
-import { InputProps } from '../../../../interfaces/inputs';
-import InputSelect from '../../Inputs/InputSelect';
+import { InputProps } from '../../../interfaces/inputs';
+import InputSelect from '../../../components/FormRegister/Inputs/InputSelect';
 
 import { useState } from 'react';
 import Select from 'react-select';
-import { customStyles, theme } from '../../Inputs/customStylesSelect';
+import {
+  customStyles,
+  theme,
+} from '../../../components/FormRegister/Inputs/customStylesSelect';
 import { TypeDonatorOptions } from './DataOptions/DataTypeDoador';
 
 const SelectedTypeDonator = ({ errors, control, htmlFor, textLabel }) => {

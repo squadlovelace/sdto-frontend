@@ -1,6 +1,7 @@
 import React from 'react';
-import InputDate from '../../Inputs/InputDate';
-import InputItem from '../../Inputs/InputItem';
+import InputDate from '../../../components/FormRegister/Inputs/InputDate';
+import InputItem from '../../../components/FormRegister/Inputs/InputItem';
+import { SelectUf } from './SelectUf';
 
 const ColumItemRightSecondStep = ({ errors, control }) => {
   return (
@@ -15,12 +16,11 @@ const ColumItemRightSecondStep = ({ errors, control }) => {
             control={control}
           />
         </div>
-        <InputItem
-          htmlFor="uf"
-          textLabel="UF"
-          placeholder="Digite a UF"
+        <SelectUf
           errors={errors}
           control={control}
+          htmlFor="uf"
+          textLabel="UF"
         />
       </div>
 

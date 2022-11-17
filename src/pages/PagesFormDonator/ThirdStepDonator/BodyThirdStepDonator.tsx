@@ -1,15 +1,15 @@
 import { FunctionComponent } from 'react';
-import ButtonFormRegister from '../../../Buttons/ButtonFormRegister';
-import TextTitle from '../../../TextTitle/TextTitle';
-import ArrowLeft from '../../ArrowLeft';
-import InputCheckbox from '../../Inputs/InputCheckbox';
+import ButtonFormRegister from '../../../components/Buttons/ButtonFormRegister';
+import TextTitle from '../../../components/TextTitle/TextTitle';
+import ArrowLeft from '../../../components/FormRegister/ArrowLeft';
+import InputCheckbox from '../../../components/FormRegister/Inputs/InputCheckbox';
 import { ColumItemLeft } from './ColumItemThirdLeft';
 import ColumItemRight from './ColumItemThirdRight';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { IFormValuegFirstStep } from '../../../../interfaces/registerType';
+import { IFormValuegFirstStep } from '../../../interfaces/registerType';
 
 const schema = yup.object({
   tiposanguineo: yup.string().required('O campo é obrigatório!'),

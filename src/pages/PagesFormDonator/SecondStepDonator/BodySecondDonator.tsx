@@ -1,14 +1,15 @@
 import { FunctionComponent } from 'react';
-import ButtonFormRegister from '../../../Buttons/ButtonFormRegister';
-import TextTitle from '../../../TextTitle/TextTitle';
-import ArrowLeft from '../../ArrowLeft';
+import ButtonFormRegister from '../../../components/Buttons/ButtonFormRegister';
+import TextTitle from '../../../components/TextTitle/TextTitle';
+import ArrowLeft from '../../../components/FormRegister/ArrowLeft';
 import ColumItemLeftSecondStep from './ColumItemLeftSecondStep';
 import ColumItemRightSecondStep from './ColumItemRightSecondStep';
 
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { IFormValuegFirstStep } from '../../../../interfaces/registerType';
+import { IFormValuegSecondStep } from '../../../interfaces/FormDonatorSecondStep';
+import { useNavigate } from 'react-router-dom';
 
 const schema = yup.object({
   nome: yup.string().required('O campo é obrigatório!'),
@@ -22,34 +23,70 @@ const schema = yup.object({
     .min(9, 'O campo telefone deve ter nove digítos')
     .required('O campo é obrigatório!'),
   cidade: yup.string().required('O campo é obrigatório!'),
-  uf: yup.string().required('O campo é obrigatório!'),
+  uf: yup
+    .mixed()
+    .required()
+    .oneOf([
+      'AC',
+      'AL',
+      'AP',
+      'AM',
+      'BA',
+      'CE',
+      'DF',
+      'ES',
+      'GO',
+      'MA',
+      'MT',
+      'MS',
+      'MG',
+      'PA',
+      'PB',
+      'PE',
+      'PI',
+      'PR',
+      'RJ',
+      'RN',
+      'RO',
+      'RR',
+      'RS',
+      'SC',
+      'SP',
+      'SE',
+      'TO',
+    ])
+    .label('uf'),
   complemento: yup.string().required('O campo é obrigatório!'),
   datadenascimento: yup.string().required('O campo é obrigatório!'),
-  genero: yup.string().required('O campo é obrigatório!'),
+  genero: yup
+    .mixed()
+    .oneOf(['masculino', 'feminino'], 'O campo é obrigatório!')
+    .required()
+    .label('genero'),
 });
 
-const BodySecondDonator: FunctionComponent<{
-  handleStep: (i: number) => void;
-}> = ({ handleStep }) => {
+const BodySecondDonator = () => {
   const {
     handleSubmit,
     formState: { errors },
     reset,
     control,
-  } = useForm<IFormValuegFirstStep>({
+  } = useForm<IFormValuegSecondStep>({
     mode: 'onChange',
     resolver: yupResolver(schema),
   });
+  const navigate = useNavigate();
 
-  const onSubmit: SubmitHandler<IFormValuegFirstStep> = (data) => {
+  const onSubmit: SubmitHandler<IFormValuegSecondStep> = (data, e) => {
+    e?.preventDefault();
     console.log({ data });
-    console.log('deu certo');
 
-    reset();
+    console.log('deu certo');
+    navigate('/');
   };
   return (
     <>
-      <div onClick={() => handleStep(0)} className="cursor-pointer">
+      <div className="cursor-pointer">
         <ArrowLeft />
       </div>
       <form
@@ -64,11 +101,7 @@ const BodySecondDonator: FunctionComponent<{
           <ColumItemLeftSecondStep errors={errors} control={control} />
           <ColumItemRightSecondStep errors={errors} control={control} />
         </div>
-        <ButtonFormRegister
-          text="Confirmar e continuar"
-          type="button"
-          handleStep={() => handleStep(2)}
-        />
+        <ButtonFormRegister text="Confirmar e continuar" type="submit" />
       </form>
     </>
   );

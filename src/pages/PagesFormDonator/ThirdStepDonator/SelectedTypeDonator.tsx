@@ -1,6 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { InputProps } from '../../../interfaces/inputs';
-import InputSelect from '../../../components/FormRegister/Inputs/InputSelect';
+import InputSelect from '../../../components/FormRegister/Inputs/InputSelectdGenre';
 
 import { useState } from 'react';
 import Select from 'react-select';

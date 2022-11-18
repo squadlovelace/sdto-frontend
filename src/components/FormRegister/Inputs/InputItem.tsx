@@ -1,7 +1,6 @@
 import { TextField } from '@mui/material';
-import { Controller } from 'react-hook-form';
 import { styled } from '@mui/material/styles';
-import { makeStyles } from '@mui/styles';
+import { Controller } from 'react-hook-form';
 
 const CssTextField = styled(TextField)({
   '& .MuiInputBase-input': {
@@ -27,45 +26,38 @@ const CssTextField = styled(TextField)({
   },
 });
 
-const useStyles = makeStyles((theme) => ({
-  helperText: {
-    position: 'absolute',
-    bottom: '-20px',
-  },
-}));
-
-const InputItem = ({ htmlFor, placeholder, textLabel, errors, control }) => {
-  const classes = useStyles();
-  return (
-    <div className="flex flex-col gap-[10px] mb-8">
-      <Controller
-        control={control}
-        name={htmlFor}
-        defaultValue=""
-        render={({ field }) => (
-          <>
-            <label htmlFor={htmlFor}>
-              <span className="font-text font-normal text-x4 leading-[25px] text-roxo800">
-                {textLabel}
-              </span>
-            </label>
-            <CssTextField
-              placeholder={placeholder}
-              id={htmlFor}
-              className="font-text font-normal text-x4 leading-[25px]  text-roxo500"
-              {...field}
-              fullWidth
-              error={!!errors[htmlFor]}
-              helperText={errors[htmlFor] ? errors[htmlFor].message : ''}
-              FormHelperTextProps={{
-                className: classes.helperText,
-              }}
-            />
-          </>
-        )}
-      />
-    </div>
-  );
-};
+const InputItem = ({ htmlFor, placeholder, textLabel, errors, control }) => (
+  <div className="flex flex-col gap-[10px] mb-8">
+    <Controller
+      control={control}
+      name={htmlFor}
+      defaultValue=""
+      render={({ field }) => (
+        <>
+          <label htmlFor={htmlFor}>
+            <span className="font-text font-normal text-x4 leading-[25px] text-roxo800">
+              {textLabel}
+            </span>
+          </label>
+          <CssTextField
+            placeholder={placeholder}
+            id={htmlFor}
+            className="font-text font-normal text-x4 leading-[25px]  text-roxo500"
+            {...field}
+            fullWidth
+            FormHelperTextProps={{
+              style: {
+                position: 'absolute',
+                bottom: '-20px',
+              },
+            }}
+            error={!!errors[htmlFor]}
+            helperText={errors[htmlFor] ? errors[htmlFor].message : ''}
+          />
+        </>
+      )}
+    />
+  </div>
+);
 
 export default InputItem;

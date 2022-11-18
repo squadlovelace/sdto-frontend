@@ -11,7 +11,7 @@ import { Theme, useTheme, styled } from '@mui/material/styles';
 import React, { useState } from 'react';
 import { Controller } from 'react-hook-form';
 
-const InputSelect = ({
+const iNPUTEHER = ({
   htmlFor,
   textLabel,
   children,
@@ -47,8 +47,6 @@ const InputSelect = ({
     </div>
   );
 };
-
-export default InputSelect;
 
 const genres = ['masculino', 'feminino'];
 
@@ -146,7 +144,7 @@ export function MultipleSelectPlaceholder({
               }}
               MenuProps={MenuPropsStyle}
               inputProps={{ 'aria-label': 'Without label' }}
-              error={!!errors.genero}
+              error={!!errors[htmlFor]}
             >
               <MenuItem disabled value="">
                 {placeholder}
@@ -191,7 +189,6 @@ export const InputSelectdGenre = ({
             id="demo-simple-select"
             value={htmlFor}
             label={htmlFor}
-            onChange={handle}
           >
             <MenuItem value={10}>Ten</MenuItem>
             <MenuItem value={20}>Twenty</MenuItem>

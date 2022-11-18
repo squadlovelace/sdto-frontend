@@ -4,6 +4,7 @@ import Home from './pages/Home/Layout';
 import Login from './pages/Login';
 import FisrtStepDonator from './pages/PagesFormDonator/FisrtStepDonator';
 import SecondStepDonator from './pages/PagesFormDonator/SecondStepDonator';
+import ThirdStepDonator from './pages/PagesFormDonator/ThirdStepDonator';
 import RecoverPassword from './pages/RecoverPassword';
 import Register from './pages/Register';
 
@@ -17,6 +18,7 @@ function App() {
         <Route path="/recoverpassword" element={<RecoverPassword />} />
         <Route path="/formdonator/firststep" element={<FisrtStepDonator />} />
         <Route path="/formdonator/secondstep" element={<SecondStepDonator />} />
+        <Route path="/formdonator/thirdstep" element={<ThirdStepDonator />} />
       </Routes>
     </BrowserRouter>
   );

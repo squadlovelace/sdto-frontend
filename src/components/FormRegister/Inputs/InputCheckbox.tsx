@@ -1,4 +1,7 @@
-import { useForm } from 'react-hook-form';
+import { FormControlLabel, FormHelperText } from '@mui/material';
+import Checkbox from '@mui/material/Checkbox';
+import { useState } from 'react';
+import { Controller } from 'react-hook-form';
 
 interface Props {
   htmlFor: string;
@@ -6,20 +9,34 @@ interface Props {
   nameInput: string;
 }
 
-const InputCheckbox = ({ htmlFor, textLabel, nameInput, errors, control }) => {
-  const { register } = useForm<Props>();
-
-  return (
-    <div className="flex gap-3 mt-[20px] ">
-      <input type="checkbox" id={htmlFor} value={htmlFor} className="h-8 w-8" />
-      <label
-        htmlFor={htmlFor}
-        className="font-text font-bold text-x2 leading-5 text-roxo800"
-      >
-        {textLabel}
-      </label>
-    </div>
-  );
+const formControlLabelStyle = {
+  '& .MuiFormControlLabel-label': {
+    fontSize: '14px',
+    fontFamily: ['Lato', 'sans-serif'],
+    fontWeight: 700,
+    lineHeight: '25px',
+    color: '#672557',
+  },
 };
+const InputCheckbox = ({ htmlFor, textLabel, errors, control }) => (
+  <div className="flex gap-3 mt-[0px] ">
+    <FormControlLabel
+      sx={{ ...formControlLabelStyle }}
+      control={
+        <Controller
+          name={htmlFor}
+          control={control}
+          render={({ field }) => <Checkbox {...field} />}
+          defaultValue={false}
+        />
+      }
+      label={textLabel}
+      className="mt-[-70px]"
+    />
+    <FormHelperText className="text-[#db0000] absolute bottom-[400px]">
+      {errors[htmlFor] ? errors[htmlFor].message : ''}
+    </FormHelperText>
+  </div>
+);
 
 export default InputCheckbox;

@@ -11,6 +11,7 @@ export type FirstStepTypes = {
 };
 
 export interface IFormValuegFirstStep {
+  nome: string;
   CPF?: string;
   RG?: string;
   confirmarEmail?: number;

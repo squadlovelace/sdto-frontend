@@ -1,6 +1,5 @@
-import { Controller, useForm } from 'react-hook-form';
-
-import { InputProps } from '../../../interfaces/inputs';
+import { FormHelperText } from '@mui/material';
+import { Controller } from 'react-hook-form';
 
 const InputDate = ({ htmlFor, textLabel, errors, control }) => (
   <div className="flex flex-col gap-[10px] mb-5">
@@ -21,9 +20,9 @@ const InputDate = ({ htmlFor, textLabel, errors, control }) => (
             {...field}
             className="border-2 border-solid rounded-[7px] border-[#DBDBDB] focus:outline-none focus:ring-roxo500 focus:border-roxo500 focus:border-2 font-text font-normal text-x4 leading-[25px] p-[18px] py-[11px] text-roxo500 	"
           />
-          <span className="absolute text-red-600  text-[12px] bottom-[300px] right-[680px]">
-            {errors.datadenascimento?.message}
-          </span>
+          <FormHelperText className="text-[#db0000] top-[630px] pl-5 absolute">
+            {errors[htmlFor] ? errors[htmlFor].message : ''}
+          </FormHelperText>
         </>
       )}
     />

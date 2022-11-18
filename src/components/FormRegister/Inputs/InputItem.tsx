@@ -49,9 +49,10 @@ const InputItem = ({ htmlFor, placeholder, textLabel, errors, control }) => (
               style: {
                 position: 'absolute',
                 bottom: '-20px',
+                color: '#db0000',
               },
             }}
-            error={!!errors[htmlFor]}
+            error={false}
             helperText={errors[htmlFor] ? errors[htmlFor].message : ''}
           />
         </>

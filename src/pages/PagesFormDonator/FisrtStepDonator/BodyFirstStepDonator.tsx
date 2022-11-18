@@ -56,7 +56,7 @@ const BodyFirstStepDonator = () => {
     console.log({ data });
 
     console.log('deu certo');
-    navigate('/');
+    navigate('/formdonator/secondstep');
     reset();
   };
 

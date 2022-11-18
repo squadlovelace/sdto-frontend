@@ -31,8 +31,6 @@ export const SelectGenre = ({
           <Select
             className="bg-white font-text font-normal text-x4 text-roxo500 "
             classNamePrefix="genero"
-            isDisabled
-            isLoading
             isClearable
             isRtl={false}
             placeholder="Qual é o seu gênero?"

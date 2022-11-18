@@ -1,13 +1,6 @@
 import { FormControlLabel, FormHelperText } from '@mui/material';
 import Checkbox from '@mui/material/Checkbox';
-import { useState } from 'react';
 import { Controller } from 'react-hook-form';
-
-interface Props {
-  htmlFor: string;
-  textLabel: string;
-  nameInput: string;
-}
 
 const formControlLabelStyle = {
   '& .MuiFormControlLabel-label': {
@@ -33,7 +26,7 @@ const InputCheckbox = ({ htmlFor, textLabel, errors, control }) => (
       label={textLabel}
       className="mt-[-70px]"
     />
-    <FormHelperText className="text-[#db0000] absolute bottom-[400px]">
+    <FormHelperText className="text-[#db0000] absolute ml-1 mt-[70px]">
       {errors[htmlFor] ? errors[htmlFor].message : ''}
     </FormHelperText>
   </div>

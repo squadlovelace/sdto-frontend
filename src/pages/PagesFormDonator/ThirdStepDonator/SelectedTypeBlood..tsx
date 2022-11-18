@@ -31,8 +31,6 @@ const SelectedTypeBlood = ({
           <Select
             className="bg-white font-text font-normal text-x4 text-roxo500 "
             classNamePrefix="type blood"
-            isDisabled
-            isLoading
             isClearable
             isRtl={false}
             placeholder="Qual é o seu tipo saguíneo?"

@@ -1,6 +1,6 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 
 import ButtonFormRegister from '../../../components/Buttons/ButtonFormRegister';
@@ -60,12 +60,14 @@ const BodySecondDonator = () => {
     console.log({ data });
 
     console.log('deu certo');
-    navigate('/');
+    navigate('/formdonator/thirdstep');
   };
   return (
     <>
       <div className="cursor-pointer">
-        <ArrowLeft />
+        <Link to="/formdonator/firststep">
+          <ArrowLeft />
+        </Link>
       </div>
       <form
         className="formSteps flex flex-col"

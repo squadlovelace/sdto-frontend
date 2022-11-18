@@ -1,5 +1,6 @@
 import InputItem from '../../../components/FormRegister/Inputs/InputItem';
 import { IColumSecondStep } from '../../../interfaces/FormDonatorStep';
+import { GenreOptions } from './DataGenre';
 import { SelectGenre } from './SelectGenre';
 
 const ColumItemLeftSecondStep = ({ errors, control }: IColumSecondStep) => (
@@ -30,6 +31,7 @@ const ColumItemLeftSecondStep = ({ errors, control }: IColumSecondStep) => (
       control={control}
       htmlFor="genero"
       textLabel="Gênero"
+      options={GenreOptions}
     />
   </div>
 );

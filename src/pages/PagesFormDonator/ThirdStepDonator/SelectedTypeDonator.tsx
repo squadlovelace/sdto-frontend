@@ -31,8 +31,6 @@ const SelectedTypeDonator = ({
           <Select
             className="bg-white font-text font-normal text-x4 text-roxo500 "
             classNamePrefix="tipoDoador"
-            isDisabled
-            isLoading
             placeholder="Tipo de doador"
             isSearchable
             options={TypeDonatorOptions}

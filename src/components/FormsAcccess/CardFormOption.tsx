@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import ArrowRight from '../../assets/ArrowRight.png';
 
 interface Props {
@@ -20,12 +22,14 @@ const CardFormOption = ({ TitleSituation, textSituation, src, alt }: Props) => (
         </p>
       </div>
     </div>
-    <img
-      src={ArrowRight}
-      alt="flecha apontando para direita"
-      width="24px"
-      className="h-[24px]"
-    />
+    <Link to="/formdonator/firststep">
+      <img
+        src={ArrowRight}
+        alt="flecha apontando para direita"
+        width="24px"
+        className="h-[24px]"
+      />
+    </Link>
   </div>
 );
 

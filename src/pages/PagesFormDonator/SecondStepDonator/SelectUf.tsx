@@ -30,10 +30,7 @@ export const SelectUf = ({
           </label>
           <Select
             className="bg-white font-text font-normal text-x3 text-roxo500 "
-            classNamePrefix="genero"
-            isDisabled
-            isLoading
-            isClearable
+            classNamePrefix="uf"
             isRtl={false}
             placeholder="UF"
             isSearchable

@@ -1,18 +1,15 @@
-import { SubmitHandler, useForm, UseFormRegister } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
+import * as yup from 'yup';
 
 import ButtonFormRegister from '../../../components/Buttons/ButtonFormRegister';
-import TextTitle from '../../../components/TextTitle/TextTitle';
 import ArrowLeft from '../../../components/FormRegister/ArrowLeft';
-
+import InputItem from '../../../components/FormRegister/Inputs/InputItem';
+import TextTitle from '../../../components/TextTitle/TextTitle';
 import { IFormValuegFirstStep } from '../../../interfaces/registerType';
-
 import { ColumItemLeft } from './ColumItemLeft';
 import ColumItemRight from './ColumItemRight';
-
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-import InputItem from '../../../components/FormRegister/Inputs/InputItem';
 
 const schema = yup.object({
   nome: yup.string().required('O campo é obrigatório!'),
@@ -59,7 +56,7 @@ const BodyFirstStepReceptor = () => {
     console.log({ data });
 
     console.log('deu certo');
-    navigate('/');
+    navigate('/formreceptor/secondstep');
     reset();
   };
 
@@ -73,7 +70,7 @@ const BodyFirstStepReceptor = () => {
         onSubmit={handleSubmit(onSubmit)}
       >
         <TextTitle
-          title="Cadastre-se como um receptor"
+          title="Cadastre-se como um Receptor"
           textInfo="Preencha os campos a seguir com as suas informações para cadastrar-se."
         />
         <InputItem
@@ -88,7 +85,7 @@ const BodyFirstStepReceptor = () => {
           <ColumItemRight errors={errors} control={control} />
         </div>
 
-        <ButtonFormRegister text="Confirmar e continuar" type="submit" />
+        <ButtonFormRegister text="Confirmar e continuar" />
       </form>
     </>
   );

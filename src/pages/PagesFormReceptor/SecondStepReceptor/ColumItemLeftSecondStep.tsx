@@ -1,11 +1,9 @@
 import InputItem from '../../../components/FormRegister/Inputs/InputItem';
-import InputTeste from '../../../components/FormRegister/Inputs/InputSelect';
-import InputSelect, {
-  InputSelectdGenre,
-  MultipleSelectPlaceholder,
-} from '../../../components/FormRegister/Inputs/InputSelectdGenre';
+import { IColumSecondStep } from '../../../interfaces/FormDonatorStep';
+import { GenreOptions } from './DataGenre';
+import { SelectGenre } from './SelectGenre';
 
-const ColumItemLeftSecondStep = ({ errors, control }) => (
+const ColumItemLeftSecondStep = ({ errors, control }: IColumSecondStep) => (
   <div className="flex flex-col flex-1">
     <InputItem
       htmlFor="endereco"
@@ -28,26 +26,12 @@ const ColumItemLeftSecondStep = ({ errors, control }) => (
       errors={errors}
       control={control}
     />
-    {/*     <SelectGenre
+    <SelectGenre
       errors={errors}
       control={control}
       htmlFor="genero"
       textLabel="Gênero"
-    />{' '}
-    <MultipleSelectPlaceholder
-      errors={errors}
-      htmlFor="genero"
-      placeholder="Qual é o seu gênero"
-      textLabel="Genero"
-      control={control}
-    /> */}
-
-    <InputTeste
-      errors={errors}
-      htmlFor="genero"
-      placeholder="Qual é o seu gênero"
-      textLabel="Genero"
-      control={control}
+      options={GenreOptions}
     />
   </div>
 );

@@ -1,55 +1,69 @@
-import { FunctionComponent } from 'react';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { Link, useNavigate } from 'react-router-dom';
+import * as yup from 'yup';
+
 import ButtonFormRegister from '../../../components/Buttons/ButtonFormRegister';
-import TextTitle from '../../../components/TextTitle/TextTitle';
 import ArrowLeft from '../../../components/FormRegister/ArrowLeft';
 import InputCheckbox from '../../../components/FormRegister/Inputs/InputCheckbox';
+import TextTitle from '../../../components/TextTitle/TextTitle';
+import { ValueThirdStep } from '../../../interfaces/FormDonatorStep';
 import { ColumItemLeft } from './ColumItemThirdLeft';
 import ColumItemRight from './ColumItemThirdRight';
 
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-import { SubmitHandler, useForm } from 'react-hook-form';
-import { IFormValuegFirstStep } from '../../../interfaces/registerType';
-
 const schema = yup.object({
-  tiposanguineo: yup.string().required('O campo é obrigatório!'),
-  orgao: yup.string().required('O campo é obrigatório!'),
-  tipodedoador: yup.string().required('O campo é obrigatório!'),
-  termosDeServico: yup.string().required('O campo é obrigatório!'),
+  tiposanguineo: yup
+    .object()
+    .shape({
+      value: yup.string().required('O campo é obrigatório!'),
+    })
+    .required('O campo é obrigatório!')
+    .nullable(),
+  tipodedoador: yup
+    .object()
+    .shape({
+      value: yup.string().required('O campo é obrigatório!'),
+    })
+    .required('O campo é obrigatório!')
+    .nullable(),
+  termosDeServico: yup.bool().oneOf([true], 'O termos e seviços é obrigatório'),
 });
 
-const BodyThirdtStepReceptor: FunctionComponent<{
-  handleStep: (i: number) => void;
-}> = ({ handleStep }) => {
+const BodyThirdtStepInst = () => {
   const {
     handleSubmit,
     formState: { errors },
     reset,
     control,
-  } = useForm<IFormValuegFirstStep>({
+  } = useForm<ValueThirdStep>({
     mode: 'onChange',
     resolver: yupResolver(schema),
   });
 
-  const onSubmit: SubmitHandler<IFormValuegFirstStep> = (data) => {
+  const navigate = useNavigate();
+
+  const onSubmit: SubmitHandler<ValueThirdStep> = (data) => {
     console.log({ data });
     console.log('deu certo');
+    navigate('/login');
 
     reset();
   };
 
   return (
     <>
-      <div onClick={() => handleStep(1)} className="cursor-pointer">
-        <ArrowLeft />
+      <div className="cursor-pointer">
+        <Link to="/formintituicao/secondstep">
+          <ArrowLeft />
+        </Link>
       </div>
       <form
-        className="formSteps flex flex-col "
+        className="formSteps flex flex-col pb-[130px]"
         onSubmit={handleSubmit(onSubmit)}
       >
         <TextTitle
-          title="Cadastre-se como um instituição"
-          textInfo="Preencha os campos a seguir com as suas informações do responsável da instituição."
+          title="Cadastre-se como Instituição"
+          textInfo="Preencha os campos a seguir com suas informações, o responsável da instituição."
         />
 
         <div className="flex justify-between gap-[50px] mb-[80px]">
@@ -59,18 +73,17 @@ const BodyThirdtStepReceptor: FunctionComponent<{
 
         <div className="grid grid-cols-2 gap-10 mb-[150px]">
           <InputCheckbox
-            htmlFor="termServices"
-            nameInput="termsServices"
+            htmlFor="termosDeServico"
             textLabel="Ao clicar nesse botão você concorda com os nossos Termos e Serviços"
             errors={errors}
             control={control}
           />
 
-          <ButtonFormRegister text="Finalizar Cadastro" type="submit" />
+          <ButtonFormRegister text="Finalizar Cadastro" />
         </div>
       </form>
     </>
   );
 };
 
-export default BodyThirdtStepReceptor;
+export default BodyThirdtStepInst;

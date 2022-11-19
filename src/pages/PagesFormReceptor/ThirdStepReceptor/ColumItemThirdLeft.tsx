@@ -1,23 +1,23 @@
-import SelectedOrgan from './SelectedOrgan';
+import InputItem from '../../../components/FormRegister/Inputs/InputItem';
+import { IColumThirdStep } from '../../../interfaces/FormDonatorStep';
 import SelectedTypeBlood from './SelectedTypeBlood.';
-import SelectedTypeOrgan from './SelectedOrgan';
 
-export const ColumItemLeft = ({ errors, control }) => {
-  return (
-    <div className="flex flex-col flex-1">
-      <SelectedTypeBlood
-        errors={errors}
-        control={control}
-        htmlFor="tiposanguineo"
-        textLabel={'Tipo sanguíneo'}
-      />
+export const ColumItemLeft = ({ errors, control }: IColumThirdStep) => (
+  <div className="flex flex-col flex-1">
+    <SelectedTypeBlood
+      errors={errors}
+      control={control}
+      htmlFor="tiposanguineo"
+      textLabel="Tipo sanguíneo"
+    />
 
-      <SelectedTypeOrgan
-        errors={errors}
-        control={control}
-        htmlFor="orgao"
-        textLabel={'orgão'}
-      />
-    </div>
-  );
-};
+    <InputItem
+      htmlFor="orgao  "
+      placeholder="Digite o órgão que necessita"
+      textLabel="Órgão"
+      errors={errors}
+      control={control}
+    />
+
+  </div>
+);

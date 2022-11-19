@@ -4,7 +4,7 @@ import HeaderFormRegister from '../../../components/FormRegister/HeaderFormRegis
 import FooterFormAccces from '../../../components/FormsAcccess/FooterFormAccces';
 import BodySecondInst from './BodySecondInst';
 
-const SecondStepReceptor = () => (
+const SecondStepInst = () => (
     <div className="flex  w-[100%] ">
       <section className="w-[74%]">
         <HeaderFormRegister src={Step2} alt="passo 2" />
@@ -15,4 +15,4 @@ const SecondStepReceptor = () => (
     </div>
   );
 
-export default SecondStepReceptor;
+export default SecondStepInst;

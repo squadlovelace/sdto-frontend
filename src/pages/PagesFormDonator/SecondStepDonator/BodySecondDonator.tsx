@@ -74,7 +74,7 @@ const BodySecondDonator = () => {
         onSubmit={handleSubmit(onSubmit)}
       >
         <TextTitle
-          title="Cadastre-se como um doador"
+          title="Cadastre-se como um Instituição"
           textInfo="Preencha os campos a seguir com as suas informações para cadastrar-se."
         />
         <div className="flex justify-between gap-[50px] ">

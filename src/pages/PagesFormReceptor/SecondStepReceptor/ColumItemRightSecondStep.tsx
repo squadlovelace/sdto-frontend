@@ -2,9 +2,10 @@ import React from 'react';
 
 import InputDate from '../../../components/FormRegister/Inputs/InputDate';
 import InputItem from '../../../components/FormRegister/Inputs/InputItem';
+import { IColumSecondStep } from '../../../interfaces/FormDonatorStep';
 import { SelectUf } from './SelectUf';
 
-const ColumItemRightSecondStep = ({ errors, control }) => (
+const ColumItemRightSecondStep = ({ errors, control }: IColumSecondStep) => (
   <div className="flex flex-col flex-1">
     <div className="grid grid-cols-3 gap-4">
       <div className="col-span-2">

@@ -1,23 +1,18 @@
-import { FunctionComponent } from 'react';
-import Step3 from '../../../../assets/Step3.png';
+import Step3 from '../../../assets/Step3.png';
 import DivPurple from '../../../components/DivPurple/DivPurple';
-import FooterFormAccces from '../../../components/FormsAcccess/FooterFormAccces';
 import HeaderFormRegister from '../../../components/FormRegister/HeaderFormRegister';
+import FooterFormAccces from '../../../components/FormsAcccess/FooterFormAccces';
 import BodyThirdtStepInst from './BodyThirdStepInst';
 
-const ThirdStepDonator: FunctionComponent<{
-  handleStep: (i: number) => void;
-}> = (props) => {
-  return (
-    <div className="flex  w-[100%]">
-      <section className="w-[74%] ">
-        <HeaderFormRegister src={Step3} alt="passo 3" />
-        <BodyThirdtStepInst {...props} />
-        <FooterFormAccces />
-      </section>
-      <DivPurple></DivPurple>
-    </div>
-  );
-};
+const ThirdStepInst = () => (
+  <div className="flex  w-[100%]">
+    <section className="w-[74%] ">
+      <HeaderFormRegister src={Step3} alt="passo 3" />
+      <BodyThirdtStepInst />
+      <FooterFormAccces />
+    </section>
+    <DivPurple />
+  </div>
+);
 
-export default ThirdStepDonator;
+export default ThirdStepInst;

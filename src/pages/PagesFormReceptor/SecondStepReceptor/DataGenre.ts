@@ -5,6 +5,6 @@ export interface GenreOption {
 }
 
 export const GenreOptions: readonly GenreOption[] = [
-  { value: 'Masculino', label: 'Masculino', isFixed: true },
-  { value: 'Feminino', label: 'Feminino', isFixed: true },
+  { value: 'masculino', label: 'masculino', isFixed: true },
+  { value: 'feminino', label: 'feminino', isFixed: true },
 ];

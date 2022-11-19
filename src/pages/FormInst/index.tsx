@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import FisrtStepInst from '../PagesFormInst/FisrtStepInst';
+import FisrtStepInst from '../PagesFormInst/FirstStepInst';
 import SecondStepInst from '../PagesFormInst/SecondStepInst';
 import ThirdStepInst from '../PagesFormInst/ThirdStepInst';
 

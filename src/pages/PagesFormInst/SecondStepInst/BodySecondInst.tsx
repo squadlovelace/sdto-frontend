@@ -1,40 +1,48 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import { SubmitHandler, useForm } from 'react-hook-form';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import * as yup from 'yup';
 
 import ButtonFormRegister from '../../../components/Buttons/ButtonFormRegister';
 import ArrowLeft from '../../../components/FormRegister/ArrowLeft';
 import InputItem from '../../../components/FormRegister/Inputs/InputItem';
 import TextTitle from '../../../components/TextTitle/TextTitle';
-import { IFormValuegSecondStep } from '../../../interfaces/FormDonatorSecondStep';
+import { IFormValuegSecondStep } from '../../../interfaces/FormDonatorStep';
 import ColumItemLeftSecondStep from './ColumItemLeftSecondStep';
 import ColumItemRightSecondStep from './ColumItemRightSecondStep';
 
 const schema = yup.object({
   nome: yup.string().required('O campo é obrigatório!'),
-  endereco: yup.string().required('O campo é obrigatório!'),
-  cep: yup
+  email: yup
     .string()
-    .min(8, 'O CEP deve conter oito digitos')
+    .email('digite um email válido')
     .required('O campo é obrigatório!'),
-  telefone: yup
+  senha: yup
     .string()
-    .min(9, 'O campo telefone deve ter nove digítos')
+    .min(6, 'A senha deve conter seis digitos')
     .required('O campo é obrigatório!'),
-  cidade: yup.string().required('O campo é obrigatório!'),
-  /*   uf: yup.mixed().required(),
-   */
-  complemento: yup.string().required('O campo é obrigatório!'),
-  datadenascimento: yup.string().required('O campo é obrigatório!'),
-  genero: yup
+  confirmarSenha: yup
     .string()
-    .required()
-    .oneOf(['masculino', 'feminino'])
-    .label('Selected Country'),
+    .required('O campo é obrigatório!')
+    .oneOf([yup.ref('senha')], 'As senhas precisam ser iguais'),
+  confirmarEmail: yup
+    .string()
+    .required('O campo é obrigatório!')
+    .oneOf([yup.ref('email')], 'Os email precisam ser iguais'),
+  cpf: yup
+    .string()
+    .min(11, 'O cpf deve ter 11 digitos!')
+    .required('O campo é obrigatório!'),
+  rg: yup
+    .string()
+    .min(8, 'O RG deve ter 8 digítos!')
+    .required('O campo é obrigatório!'),
+  crm: yup
+    .string()
+    .required('O campo é obrigatório!'),
 });
 
-const BodySecondReceptor = () => {
+const BodySecondInst = () => {
   const {
     handleSubmit,
     formState: { errors },
@@ -51,24 +59,26 @@ const BodySecondReceptor = () => {
     console.log({ data });
 
     console.log('deu certo');
-    navigate('/');
+    navigate('/formintituicao/thirdstep');
   };
   return (
     <>
       <div className="cursor-pointer">
-        <ArrowLeft />
+        <Link to="/formintituicao/firststep">
+          <ArrowLeft />
+        </Link>
       </div>
       <form
         className="formSteps flex flex-col"
         onSubmit={handleSubmit(onSubmit)}
       >
         <TextTitle
-          title="Cadastre-se como uma instituição"
-          textInfo="Preencha os campos a seguir com as suas informações do responsável da instituição."
+          title="Cadastre-se como uma Instituição"
+          textInfo="Preencha os campos a seguir com as suas informações para cadastrar-se."
         />
-          <InputItem
+        <InputItem
           htmlFor="nome"
-          placeholder="Digite o seu nome completo"
+          placeholder="Digite o nome completo do responsável"
           textLabel="Nome"
           errors={errors}
           control={control}
@@ -83,4 +93,4 @@ const BodySecondReceptor = () => {
   );
 };
 
-export default BodySecondReceptor;
+export default BodySecondInst;

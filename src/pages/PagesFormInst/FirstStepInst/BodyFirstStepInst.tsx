@@ -1,44 +1,30 @@
-import { SubmitHandler, useForm, UseFormRegister } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
+import { SubmitHandler, useForm } from 'react-hook-form';
 import { Link, useNavigate } from 'react-router-dom';
+import * as yup from 'yup';
 
 import ButtonFormRegister from '../../../components/Buttons/ButtonFormRegister';
-import TextTitle from '../../../components/TextTitle/TextTitle';
 import ArrowLeft from '../../../components/FormRegister/ArrowLeft';
-
+import InputItem from '../../../components/FormRegister/Inputs/InputItem';
+import TextTitle from '../../../components/TextTitle/TextTitle';
 import { IFormValuegFirstStep } from '../../../interfaces/registerType';
-
 import { ColumItemLeft } from './ColumItemLeft';
 import ColumItemRight from './ColumItemRight';
 
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
-import InputItem from '../../../components/FormRegister/Inputs/InputItem';
-
 const schema = yup.object({
-  nome: yup.string().required('O campo é obrigatório!'),
-  email: yup
+  razao: yup.string().required('O campo é obrigatório!'),
+  endereco: yup
     .string()
-    .email('digite um email válido')
     .required('O campo é obrigatório!'),
-  senha: yup
+  cep: yup
     .string()
-    .min(6, 'A senha deve conter seis digitos')
+    .min(8, 'o CEP deve conter 8 digitos')
     .required('O campo é obrigatório!'),
-  confirmarSenha: yup
+  cidade: yup
     .string()
-    .required('O campo é obrigatório!')
-    .oneOf([yup.ref('senha')], 'As senhas precisam ser iguais'),
-  confirmarEmail: yup
-    .string()
-    .required('O campo é obrigatório!')
-    .oneOf([yup.ref('email')], 'Os email precisam ser iguais'),
-  cpf: yup
-    .string()
-    .min(11, 'O cpf deve ter 11 digitos!')
     .required('O campo é obrigatório!'),
-  rg: yup
+  cnpj: yup
     .string()
-    .min(8, 'O RG deve ter 8 digítos!')
     .required('O campo é obrigatório!'),
 });
 
@@ -59,13 +45,13 @@ const BodyFirstStepInst = () => {
     console.log({ data });
 
     console.log('deu certo');
-    navigate('/');
+    navigate('/formintituicao/secondstep');
     reset();
   };
 
   return (
     <>
-      <Link to="/">
+      <Link to="/login">
         <ArrowLeft />
       </Link>
       <form
@@ -73,13 +59,13 @@ const BodyFirstStepInst = () => {
         onSubmit={handleSubmit(onSubmit)}
       >
         <TextTitle
-          title="Cadastre-se como Instituição"
-          textInfo="Preencha os campos a seguir com as suas informações, o responsável pela intituição."
+          title="Cadastre-se como um Instituição"
+          textInfo="Preencha os campos a seguir com as suas informações para cadastrar-se."
         />
         <InputItem
           htmlFor="razao"
-          placeholder="Digite a razao social da instituição"
-          textLabel="Razao"
+          placeholder="Digite a razão social da Instituição"
+          textLabel="Razão"
           errors={errors}
           control={control}
         />
@@ -88,7 +74,7 @@ const BodyFirstStepInst = () => {
           <ColumItemRight errors={errors} control={control} />
         </div>
 
-        <ButtonFormRegister text="Confirmar e continuar" type="submit" />
+        <ButtonFormRegister text="Confirmar e continuar" />
       </form>
     </>
   );

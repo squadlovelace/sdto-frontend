@@ -1,4 +1,4 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["commitlint.config.ts"]
+  "include": ["node_modules", "dist", "coverage", "commitlint.config.ts", "src"]
 }

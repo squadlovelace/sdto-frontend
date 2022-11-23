@@ -2,23 +2,20 @@ import { FormHelperText } from '@mui/material';
 import { Controller } from 'react-hook-form';
 import Select from 'react-select';
 
-import {
-  customStyles,
-  theme,
-} from '../../../components/Selects/customStylesSelect';
-import { SelectSecondStep } from '../../../interfaces/FormDonatorStep';
-import { UfOptions } from './DataUf';
+import { SelectThirdStep } from '../../interfaces/FormDonatorStep';
+import { customStyles, theme } from './customStylesSelect';
+import { TypeBloodOptions } from './DataOptions/DataTypeBlood';
 
-export const SelectUf = ({
+const SelectedTypeBlood = ({
   errors,
   control,
   htmlFor,
   textLabel,
-}: SelectSecondStep) => (
+}: SelectThirdStep) => (
   <div className="flex flex-col gap-[10px] mb-5">
     <Controller
       control={control}
-      name="uf"
+      name="tiposanguineo"
       defaultValue=""
       render={({ field }) => (
         <>
@@ -29,21 +26,25 @@ export const SelectUf = ({
             {textLabel}
           </label>
           <Select
-            className="bg-white font-text font-normal text-x3 text-roxo500 "
-            classNamePrefix="uf"
+            className="bg-white font-text font-normal text-x4 text-roxo500 "
+            classNamePrefix="type blood"
+            isClearable
             isRtl={false}
-            placeholder="UF"
+            placeholder="Qual é o seu tipo saguíneo?"
             isSearchable
-            options={UfOptions}
+            options={TypeBloodOptions}
             styles={customStyles}
             theme={theme}
             {...field}
           />
-          <FormHelperText className="text-[#db0000] top-[380px] right-[415px] absolute">
-            {errors.uf ? errors.uf.message : ''}
+
+          <FormHelperText className="text-[#db0000]  absolute top-[380px]">
+            {errors.tiposanguineo ? errors.tiposanguineo.message : ''}
           </FormHelperText>
         </>
       )}
     />
   </div>
 );
+
+export default SelectedTypeBlood;

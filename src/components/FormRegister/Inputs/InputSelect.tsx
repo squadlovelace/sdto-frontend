@@ -43,10 +43,7 @@ export default function InputSelect({
     const {
       target: { value },
     } = event;
-    SetValueOptiosn(
-      // On autofill we get a stringified value.
-      typeof value === 'string' ? value.split(',') : value
-    );
+    SetValueOptiosn(typeof value === 'string' ? value.split(',') : value);
   };
 
   return (

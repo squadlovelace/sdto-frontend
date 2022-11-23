@@ -26,8 +26,14 @@ const CssTextField = styled(TextField)({
   },
 });
 
-const InputItem = ({ htmlFor, placeholder, textLabel, errors, control }) => (
-  <div className="flex flex-col  flex-grow gap-[10px] mb-8">
+const InputITextArea = ({
+  htmlFor,
+  placeholder,
+  textLabel,
+  errors,
+  control,
+}) => (
+  <div className="flex flex-col  gap-[10px] mb-8">
     <Controller
       control={control}
       name={htmlFor}
@@ -44,7 +50,6 @@ const InputItem = ({ htmlFor, placeholder, textLabel, errors, control }) => (
             id={htmlFor}
             className="font-text font-normal text-x4 leading-[25px]  text-roxo500"
             {...field}
-            fullWidth
             FormHelperTextProps={{
               style: {
                 position: 'absolute',
@@ -61,4 +66,4 @@ const InputItem = ({ htmlFor, placeholder, textLabel, errors, control }) => (
   </div>
 );
 
-export default InputItem;
+export default InputITextArea;

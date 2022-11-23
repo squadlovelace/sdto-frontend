@@ -1,5 +1,5 @@
+import SelectedTypeBlood from '../../../components/Selects/SelectedTypeBlood.';
 import { IColumThirdStep } from '../../../interfaces/FormDonatorStep';
-import SelectedTypeBlood from './SelectedTypeBlood.';
 
 export const ColumItemLeft = ({ errors, control }: IColumThirdStep) => (
   <div className="flex flex-col flex-1">

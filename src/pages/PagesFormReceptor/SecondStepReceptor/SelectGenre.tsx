@@ -5,7 +5,7 @@ import Select from 'react-select';
 import {
   customStyles,
   theme,
-} from '../../../components/FormRegister/Inputs/customStylesSelect';
+} from '../../../components/Selects/customStylesSelect';
 import { SelectSecondStep } from '../../../interfaces/FormDonatorStep';
 import { GenreOptions } from './DataGenre';
 

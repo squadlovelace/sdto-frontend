@@ -1,7 +1,6 @@
 import InputItem from '../../../components/FormRegister/Inputs/InputItem';
+import { SelectGenre } from '../../../components/Selects/SelectGenre';
 import { IColumSecondStep } from '../../../interfaces/FormDonatorStep';
-import { GenreOptions } from './DataGenre';
-import { SelectGenre } from './SelectGenre';
 
 const ColumItemLeftSecondStep = ({ errors, control }: IColumSecondStep) => (
   <div className="flex flex-col flex-1">
@@ -31,7 +30,6 @@ const ColumItemLeftSecondStep = ({ errors, control }: IColumSecondStep) => (
       control={control}
       htmlFor="genero"
       textLabel="Gênero"
-      options={GenreOptions}
     />
   </div>
 );

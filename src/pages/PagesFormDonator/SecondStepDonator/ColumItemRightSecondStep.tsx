@@ -2,8 +2,8 @@ import React from 'react';
 
 import InputDate from '../../../components/FormRegister/Inputs/InputDate';
 import InputItem from '../../../components/FormRegister/Inputs/InputItem';
+import { SelectUf } from '../../../components/Selects/SelectUf';
 import { IColumSecondStep } from '../../../interfaces/FormDonatorStep';
-import { SelectUf } from './SelectUf';
 
 const ColumItemRightSecondStep = ({ errors, control }: IColumSecondStep) => (
   <div className="flex flex-col flex-1">

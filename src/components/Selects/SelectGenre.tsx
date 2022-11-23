@@ -2,14 +2,11 @@ import { FormHelperText } from '@mui/material';
 import { Controller } from 'react-hook-form';
 import Select from 'react-select';
 
-import {
-  customStyles,
-  theme,
-} from '../../../components/Selects/customStylesSelect';
-import { SelectSecondStep } from '../../../interfaces/FormDonatorStep';
-import { UfOptions } from './DataUf';
+import { SelectSecondStep } from '../../interfaces/FormDonatorStep';
+import { customStyles, theme } from './customStylesSelect';
+import { GenreOptions } from './DataOptions/DataGenre';
 
-export const SelectUf = ({
+export const SelectGenre = ({
   errors,
   control,
   htmlFor,
@@ -18,7 +15,7 @@ export const SelectUf = ({
   <div className="flex flex-col gap-[10px] mb-5">
     <Controller
       control={control}
-      name="uf"
+      name="genero"
       defaultValue=""
       render={({ field }) => (
         <>
@@ -29,18 +26,20 @@ export const SelectUf = ({
             {textLabel}
           </label>
           <Select
-            className="bg-white font-text font-normal text-x3 text-roxo500 "
-            classNamePrefix="uf"
+            className="bg-white font-text font-normal text-x4 text-roxo500 "
+            classNamePrefix="genero"
+            isClearable
             isRtl={false}
-            placeholder="UF"
+            placeholder="Qual é o seu gênero?"
             isSearchable
-            options={UfOptions}
+            options={GenreOptions}
             styles={customStyles}
             theme={theme}
             {...field}
           />
-          <FormHelperText className="text-[#db0000] top-[380px] right-[415px] absolute">
-            {errors.uf ? errors.uf.message : ''}
+
+          <FormHelperText className="text-[#db0000]">
+            {errors.genero ? errors.genero.message : ''}
           </FormHelperText>
         </>
       )}

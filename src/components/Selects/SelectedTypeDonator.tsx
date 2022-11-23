@@ -2,11 +2,8 @@ import { FormHelperText } from '@mui/material';
 import { Controller } from 'react-hook-form';
 import Select from 'react-select';
 
-import {
-  customStyles,
-  theme,
-} from '../../../components/FormRegister/Inputs/customStylesSelect';
-import { SelectThirdStep } from '../../../interfaces/FormDonatorStep';
+import { SelectThirdStep } from '../../interfaces/FormDonatorStep';
+import { customStyles, theme } from './customStylesSelect';
 import { TypeDonatorOptions } from './DataOptions/DataTypeDoador';
 
 const SelectedTypeDonator = ({

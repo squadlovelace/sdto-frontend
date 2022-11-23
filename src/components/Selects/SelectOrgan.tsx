@@ -2,23 +2,14 @@ import { FormHelperText } from '@mui/material';
 import { Controller } from 'react-hook-form';
 import Select from 'react-select';
 
-import {
-  customStyles,
-  theme,
-} from '../../../components/FormRegister/Inputs/customStylesSelect';
-import { SelectThirdStep } from '../../../interfaces/FormDonatorStep';
-import { TypeBloodOptions } from './DataOptions/DataTypeBlood';
+import { customStyles, theme } from './customStylesSelect';
+import { GenreOptions } from './DataOptions/DataGenre';
 
-const SelectedTypeBlood = ({
-  errors,
-  control,
-  htmlFor,
-  textLabel,
-}: SelectThirdStep) => (
+export const SelectGenre = ({ errors, control, htmlFor, textLabel }) => (
   <div className="flex flex-col gap-[10px] mb-5">
     <Controller
       control={control}
-      name="tiposanguineo"
+      name={htmlFor}
       defaultValue=""
       render={({ field }) => (
         <>
@@ -30,24 +21,22 @@ const SelectedTypeBlood = ({
           </label>
           <Select
             className="bg-white font-text font-normal text-x4 text-roxo500 "
-            classNamePrefix="type blood"
+            classNamePrefix="genero"
             isClearable
             isRtl={false}
-            placeholder="Qual é o seu tipo saguíneo?"
+            placeholder="Qual é o seu gênero?"
             isSearchable
-            options={TypeBloodOptions}
+            options={GenreOptions}
             styles={customStyles}
             theme={theme}
             {...field}
           />
 
-          <FormHelperText className="text-[#db0000]  absolute top-[380px]">
-            {errors.tiposanguineo ? errors.tiposanguineo.message : ''}
+          <FormHelperText className="text-[#db0000]">
+            {errors.genero ? errors.genero.message : ''}
           </FormHelperText>
         </>
       )}
     />
   </div>
 );
-
-export default SelectedTypeBlood;

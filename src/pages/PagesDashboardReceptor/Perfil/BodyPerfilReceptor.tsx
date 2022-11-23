@@ -8,7 +8,7 @@ import { UfOptions } from '../../../components/Selects/DataOptions/DataUf';
 import { SelectInput } from '../../../components/Selects/Select';
 
 const BodyPerfilReceptor = ({ errors, control }) => (
-  <div>
+  <div className="mb-[160px]">
     <div className="flex gap-[60px] ">
       <InputItem
         htmlFor="endereco"
@@ -45,7 +45,7 @@ const BodyPerfilReceptor = ({ errors, control }) => (
         control={control}
       />
       <InputItem
-        htmlFor="Complemento"
+        htmlFor="complemento"
         placeholder="Digite o complemento"
         textLabel="Complemento"
         errors={errors}
@@ -75,7 +75,7 @@ const BodyPerfilReceptor = ({ errors, control }) => (
         <SelectInput
           errors={errors}
           control={control}
-          htmlFor="orgao"
+          htmlFor="orgaos"
           placeholder="Selecione o(s) orgãos necessitados"
           textLabel="Orgão"
           options={OrganOptions}
@@ -83,13 +83,15 @@ const BodyPerfilReceptor = ({ errors, control }) => (
         />
       </div>
     </div>
-    <InputITextArea
-      errors={errors}
-      control={control}
-      htmlFor="comorbidades"
-      placeholder="Digite sua comorbidade"
-      textLabel="Comorbidades"
-    />
+    <div className="h-[100px]">
+      <InputITextArea
+        errors={errors}
+        control={control}
+        htmlFor="comorbidade"
+        placeholder="Digite sua comorbidade"
+        textLabel="Comorbidades"
+      />
+    </div>
   </div>
 );
 

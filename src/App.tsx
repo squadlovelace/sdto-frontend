@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/Home/Layout';
 import Login from './pages/Login';
 import DashboardReceptor from './pages/PagesDashboardReceptor/Dashboard';
+import InstitutionReceptor from './pages/PagesDashboardReceptor/InstitutionReceptor';
 import EditPerfilReceptor from './pages/PagesDashboardReceptor/Perfil/EditPerfil';
 import FisrtStepDonator from './pages/PagesFormDonator/FirstStepDonator';
 import SecondStepDonator from './pages/PagesFormDonator/SecondStepDonator';
@@ -41,6 +42,10 @@ function App() {
         <Route path="/formintituicao/thirdstep" element={<ThirdStepInst />} />
         <Route path="/dashboardreceptor" element={<DashboardReceptor />} />
         <Route path="/editperfilreceptor" element={<EditPerfilReceptor />} />
+        <Route
+          path="/lisrinstitutionsreceptor"
+          element={<InstitutionReceptor />}
+        />
       </Routes>
     </BrowserRouter>
   );

@@ -48,7 +48,7 @@ const InputITextArea = ({
           <CssTextField
             placeholder={placeholder}
             id={htmlFor}
-            className="font-text font-normal text-x4 leading-[25px]  text-roxo500"
+            className="font-text font-normal text-x4 leading-[25px]  text-roxo500  "
             {...field}
             FormHelperTextProps={{
               style: {

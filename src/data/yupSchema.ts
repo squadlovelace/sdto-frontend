@@ -46,16 +46,17 @@ export const SchemaPefilDonator = yup.object({
     .min(9, 'O campo telefone deve ter nove digítos')
     .required('O campo é obrigatório!'),
   cidade: yup.string().required('O campo é obrigatório!'),
-  complemento: yup.string().required('O campo é obrigatório!'),
-  comorbidade: yup.string(),
+  complemento: yup.string().notRequired(),
+  comorbidade: yup.string().notRequired(),
 
-  orgao: yup
-    .object()
-    .shape({
-      value: yup.string().required('O campo é obrigatório!'),
-    })
-    .required('O campo é obrigatório!')
-    .nullable(),
+  orgaos: yup
+    .array()
+    .min(1, 'campo inválido')
+    .of(
+      yup.object().shape({
+        value: yup.string().required('O campo é obrigatório!'),
+      })
+    ),
 
   genero: yup
     .object()

@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, useLocation, Navigate } from 'react-router-dom';
 import Home from './pages/Home/Layout';
 import Login from './pages/Login';
 import FisrtStepDonator from './pages/PagesFormDonator/FirstStepDonator';
@@ -13,6 +13,18 @@ import ThirdStepReceptor from './pages/PagesFormReceptor/ThirdStepReceptor';
 import RecoverPassword from './pages/RecoverPassword';
 import Register from './pages/Register';
 
+const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
+  const user = localStorage.getItem('@user');
+  const location = useLocation();
+
+  if (user == null) {
+    return <Navigate to="/" state={{ from: location }} replace />;
+  } else {
+    return children;
+  }
+  
+};
+
 function App() {
   return (
     <BrowserRouter>
@@ -21,7 +33,13 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/recoverpassword" element={<RecoverPassword />} />
-        <Route path="/formdonator/firststep" element={<FisrtStepDonator />} />
+        <Route
+          path="/formdonator/firststep"
+          element={
+            <ProtectedRoute>
+              <FisrtStepDonator />
+            </ProtectedRoute>
+          } />
         <Route path="/formdonator/secondstep" element={<SecondStepDonator />} />
         <Route path="/formdonator/thirdstep" element={<ThirdStepDonator />} />
         <Route path="/formreceptor/firststep" element={<FisrtStepReceptor/>} />

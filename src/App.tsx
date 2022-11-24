@@ -2,6 +2,9 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 import Home from './pages/Home/Layout';
 import Login from './pages/Login';
+import DashboardDoador from './pages/PagesDashboardDoador/Dashboard';
+import InstitutionDoador from './pages/PagesDashboardDoador/FrontPageDoador';
+import EditPerfilDoador from './pages/PagesDashboardDoador/Perfil/EditPerfil';
 import DashboardReceptor from './pages/PagesDashboardReceptor/Dashboard';
 import InstitutionReceptor from './pages/PagesDashboardReceptor/InstitutionReceptor';
 import EditPerfilReceptor from './pages/PagesDashboardReceptor/Perfil/EditPerfil';
@@ -46,6 +49,11 @@ function App() {
           path="/lisrinstitutionsreceptor"
           element={<InstitutionReceptor />}
         />
+         <Route path="/dashboarddoador" element={<DashboardDoador />} />
+         <Route path="/editperfildoador" element={<EditPerfilDoador />} />
+         <Route path="/lisrinstitutionsdoador" element={<InstitutionDoador />}
+        />
+        
       </Routes>
     </BrowserRouter>
   );

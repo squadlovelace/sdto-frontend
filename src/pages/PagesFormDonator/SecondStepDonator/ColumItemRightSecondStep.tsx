@@ -2,6 +2,8 @@ import React from 'react';
 
 import InputDate from '../../../components/FormRegister/Inputs/InputDate';
 import InputItem from '../../../components/FormRegister/Inputs/InputItem';
+import { TypeBloodOptions } from '../../../components/Selects/DataOptions/DataTypeBlood';
+import { SelectInput } from '../../../components/Selects/Select';
 import { SelectUf } from '../../../components/Selects/SelectUf';
 import { IColumSecondStep } from '../../../interfaces/FormDonatorStep';
 
@@ -12,27 +14,32 @@ const ColumItemRightSecondStep = ({ errors, control }: IColumSecondStep) => (
         <InputItem
           htmlFor="cidade"
           textLabel="Cidade"
-          placeholder="Digite a cidade em que reside"
+          placeholder="Cidade em que reside"
           errors={errors}
           control={control}
         />
       </div>
+
       <SelectUf errors={errors} control={control} htmlFor="uf" textLabel="UF" />
     </div>
 
-    <InputItem
-      htmlFor="complemento"
-      textLabel="Complemento"
-      placeholder="Digite o complemento"
+    <SelectInput
       errors={errors}
       control={control}
+      htmlFor="tiposanguineo"
+      placeholder="Qual o seu tipo sanguíneo"
+      options={TypeBloodOptions}
+      textLabel="Tipo sanguíneo"
+      valueMulti={false}
     />
-    <InputDate
-      htmlFor="datadenascimento"
-      textLabel="Data de Nascimento"
-      errors={errors}
-      control={control}
-    />
+    <div className="mt-[15px]">
+      <InputDate
+        htmlFor="datadenascimento"
+        textLabel="Data de Nascimento"
+        errors={errors}
+        control={control}
+      />
+    </div>
   </div>
 );
 

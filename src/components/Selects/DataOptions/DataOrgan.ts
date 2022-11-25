@@ -6,8 +6,9 @@ export interface Option {
 
 export const OrganOptions: readonly Option[] = [
   { value: 'Coracção', label: 'Coração', isFixed: true },
-  { value: 'Rim', label: 'Rim', isFixed: true },
+  { value: 'Rins', label: 'Rins', isFixed: true },
   { value: 'Pulmão', label: 'Pulmão', isFixed: true },
   { value: 'Fígado', label: 'Fígado', isFixed: true },
-  { value: 'Cornea', label: 'Cornea', isFixed: true },
+  { value: 'Pâncreas', label: 'Pâncreas', isFixed: true },
+  { value: 'Intestino', label: 'Intestino', isFixed: true },
 ];

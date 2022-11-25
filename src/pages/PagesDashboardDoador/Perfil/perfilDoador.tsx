@@ -23,7 +23,7 @@ const PerfilReceptor = () => {
     console.log('deu certo');
   };
   return (
-    <div className="flex gap-[90px]">
+    <div className="flex gap-[90px] pr-[200px]">
       <SidebarReceptor />
       <section className="pt-[60px]   pb-[90px] ">
         <Avatar initialLettersUser="US" nameUser="User" typeUser="Receptor" />

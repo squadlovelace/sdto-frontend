@@ -1,5 +1,6 @@
-import InputItem from '../../../components/FormRegister/Inputs/InputItem';
+import { SelectInput } from '../../../components/Selects/Select';
 import { IColumThirdStep } from '../../../interfaces/FormDonatorStep';
+import { OrganOptions } from './DataOptions/DataOrgan';
 import SelectedTypeBlood from './SelectedTypeBlood.';
 
 export const ColumItemLeft = ({ errors, control }: IColumThirdStep) => (
@@ -11,13 +12,14 @@ export const ColumItemLeft = ({ errors, control }: IColumThirdStep) => (
       textLabel="Tipo sanguíneo"
     />
 
-    <InputItem
-      htmlFor="orgao  "
-      placeholder="Digite o órgão que necessita"
-      textLabel="Órgão"
+    <SelectInput
       errors={errors}
       control={control}
+      htmlFor="orgaos"
+      placeholder="Quais o(s) orgão(s) que você precisa?"
+      options={OrganOptions}
+      textLabel="Orgãos"
+      valueMulti
     />
-
   </div>
 );

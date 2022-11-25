@@ -17,6 +17,7 @@ export const customStyles = {
     '&:hover': {
       border: '2px solid #672557',
     },
+    height: '55px',
   }),
 
   singleValue: (provided, state) => {

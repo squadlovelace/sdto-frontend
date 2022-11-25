@@ -25,12 +25,14 @@ const ColumItemLeftSecondStep = ({ errors, control }: IColumSecondStep) => (
       errors={errors}
       control={control}
     />
-    <SelectGenre
-      errors={errors}
-      control={control}
-      htmlFor="genero"
-      textLabel="Gênero"
-    />
+    <div className="h-[50px]">
+      <SelectGenre
+        errors={errors}
+        control={control}
+        htmlFor="genero"
+        textLabel="Gênero"
+      />
+    </div>
   </div>
 );
 

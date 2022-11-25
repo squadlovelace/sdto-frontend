@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 
 import ButtonFormRegister from '../../../components/Buttons/ButtonFormRegister';
 import SidebarDoador from '../../../components/sidebar/sidebardoador';
-import { SchemaPefilDonator } from '../../../data/yupSchema';
+import { PerilEditDonator, SchemaPefilDonator } from '../../../data/yupSchema';
 import Avatar from './Avatar';
 import BodyPerfilDoador from './BodyPerfilDoador';
 
@@ -15,7 +15,7 @@ const EditPerfilDoador = () => {
     control,
   } = useForm({
     mode: 'onChange',
-    resolver: yupResolver(SchemaPefilDonator),
+    resolver: yupResolver(PerilEditDonator),
   });
 
   const onSubmit = (data) => {
@@ -27,7 +27,7 @@ const EditPerfilDoador = () => {
   return (
     <div className="flex gap-[90px]">
       <SidebarDoador />
-      <section className="pt-[60px]   pb-[90px] pr-[150] ">
+      <section className="pt-[60px]   pb-[90px] ">
         <Avatar initialLettersUser="US" nameUser="User" typeUser="Receptor" />
         <form
           className="mt-[75px]  flex flex-col "

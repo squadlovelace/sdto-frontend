@@ -29,8 +29,6 @@ export const SelectInput = ({
           <Select
             isMulti={valueMulti}
             placeholder={placeholder}
-            isClearable
-            isSearchable
             options={options}
             styles={customStyles}
             theme={theme}
@@ -40,7 +38,7 @@ export const SelectInput = ({
             {...field}
           />
 
-          <FormHelperText className="text-[#db0000]">
+          <FormHelperText className="text-[#db0000] absolute  pt-[90px] pl-2">
             {errors[htmlFor] ? errors[htmlFor].message : ''}
           </FormHelperText>
         </>

@@ -7,7 +7,7 @@ const CssTextField = styled(TextField)({
     fontSize: 18,
     fontFamily: ['Lato', 'Roboto'],
     color: '#672557',
-    lineHeight: 25,
+    lineHeight: ['25px'],
   },
 
   '& .MuiOutlinedInput-root': {
@@ -57,6 +57,8 @@ const InputITextArea = ({
                 color: '#db0000',
               },
             }}
+            multiline
+            minRows={5}
             error={false}
             helperText={errors[htmlFor] ? errors[htmlFor].message : ''}
           />

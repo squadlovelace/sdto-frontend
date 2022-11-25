@@ -5,12 +5,12 @@ import Login from './pages/Login';
 import DashboardDoador from './pages/PagesDashboardDoador/Dashboard';
 import InstitutionDoador from './pages/PagesDashboardDoador/FrontPageDoador';
 import EditPerfilDoador from './pages/PagesDashboardDoador/Perfil/EditPerfil';
+import EmployeeRegistration from './pages/PagesDashboardInstituition/EmployeeRegistration';
 import DashboardReceptor from './pages/PagesDashboardReceptor/Dashboard';
 import InstitutionReceptor from './pages/PagesDashboardReceptor/InstitutionReceptor';
 import EditPerfilReceptor from './pages/PagesDashboardReceptor/Perfil/EditPerfil';
 import FisrtStepDonator from './pages/PagesFormDonator/FirstStepDonator';
 import SecondStepDonator from './pages/PagesFormDonator/SecondStepDonator';
-import ThirdStepDonator from './pages/PagesFormDonator/ThirdStepDonator';
 import FirstStepInst from './pages/PagesFormInst/FirstStepInst';
 import SecondStepInst from './pages/PagesFormInst/SecondStepInst';
 import ThirdStepInst from './pages/PagesFormInst/ThirdStepInst';
@@ -30,7 +30,6 @@ function App() {
         <Route path="/recoverpassword" element={<RecoverPassword />} />
         <Route path="/formdonator/firststep" element={<FisrtStepDonator />} />
         <Route path="/formdonator/secondstep" element={<SecondStepDonator />} />
-        <Route path="/formdonator/thirdstep" element={<ThirdStepDonator />} />
         <Route path="/formreceptor/firststep" element={<FisrtStepReceptor />} />
         <Route
           path="/formreceptor/secondstep"
@@ -49,11 +48,13 @@ function App() {
           path="/lisrinstitutionsreceptor"
           element={<InstitutionReceptor />}
         />
-         <Route path="/dashboarddoador" element={<DashboardDoador />} />
-         <Route path="/editperfildoador" element={<EditPerfilDoador />} />
-         <Route path="/lisrinstitutionsdoador" element={<InstitutionDoador />}
+        <Route path="/dashboarddoador" element={<DashboardDoador />} />
+        <Route path="/editperfildoador" element={<EditPerfilDoador />} />
+        <Route path="/lisrinstitutionsdoador" element={<InstitutionDoador />} />
+        <Route
+          path="/dashboardregisterInstituition"
+          element={<EmployeeRegistration />}
         />
-        
       </Routes>
     </BrowserRouter>
   );

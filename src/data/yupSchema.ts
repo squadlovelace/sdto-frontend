@@ -39,11 +39,11 @@ export const SchemaPefilDonator = yup.object({
   endereco: yup.string().required('O campo é obrigatório!'),
   cep: yup
     .string()
-    .min(8, 'O CEP deve conter oito digitos')
+    .min(8, 'O campo inválido')
     .required('O campo é obrigatório!'),
   telefone: yup
     .string()
-    .min(9, 'O campo telefone deve ter nove digítos')
+    .min(9, 'O campo inválido')
     .required('O campo é obrigatório!'),
   cidade: yup.string().required('O campo é obrigatório!'),
   complemento: yup.string().notRequired(),
@@ -56,7 +56,9 @@ export const SchemaPefilDonator = yup.object({
       yup.object().shape({
         value: yup.string().required('O campo é obrigatório!'),
       })
-    ),
+    )
+    .required('O campo é obrigatório!')
+    .nullable(),
 
   genero: yup
     .object()
@@ -67,6 +69,35 @@ export const SchemaPefilDonator = yup.object({
     .nullable(),
 
   uf: yup
+    .object()
+    .shape({
+      value: yup.string().required('O campo é obrigatório!'),
+    })
+    .required('O campo é obrigatório!')
+    .nullable(),
+});
+
+export const PerilEditDonator = yup.object({
+  endereco: yup.string().required('O campo é obrigatório!'),
+  cidade: yup.string().required('O campo é obrigatório!'),
+  uf: yup
+    .object()
+    .shape({
+      value: yup.string().required('O campo é obrigatório!'),
+    })
+    .required('O campo é obrigatório!')
+    .nullable(),
+  cep: yup
+    .string()
+    .min(8, 'O campo é obrigatório!')
+    .required('O campo é obrigatório!'),
+  complemento: yup.string().notRequired(),
+  telefone: yup
+    .string()
+    .min(9, 'O campo inválido')
+    .required('O campo é obrigatório!'),
+
+  genero: yup
     .object()
     .shape({
       value: yup.string().required('O campo é obrigatório!'),

@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 
 import ButtonFormRegister from '../../../components/Buttons/ButtonFormRegister';
 import SidebarDoador from '../../../components/sidebar/sidebardoador';
-import { PerilEditDonator, SchemaPefilDonator } from '../../../data/yupSchema';
+import { PerilEditDonator } from '../../../data/yupSchema';
 import Avatar from './Avatar';
 import BodyPerfilDoador from './BodyPerfilDoador';
 

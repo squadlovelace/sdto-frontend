@@ -8,7 +8,7 @@ import Avatar from '../Avatar';
 import Itemsside from './itemsside';
 
 const SidebarReceptor = () => (
-  <section className="bg-white rounded-[7px] border-[1px] border-solid border-[#d0d5dd] px-9 py-8  my-[30px] ml-[30px]  w-[280px]">
+  <section className="bg-white rounded-[7px] border-[1px] border-solid border-[#d0d5dd] px-9 py-8  my-[30px] ml-[30px]  w-[280px]  h-[calc(100vh-60px)]">
     <Link to="/">
       <img src={Logo} alt="logo do sdto" />
     </Link>

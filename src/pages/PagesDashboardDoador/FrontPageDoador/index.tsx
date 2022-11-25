@@ -1,7 +1,6 @@
 import React from 'react';
+
 import SidebarDoador from '../../../components/sidebar/sidebardoador';
-
-
 import ListInstituition from './ListInstituition';
 
 const InstitutionDoador = () => (

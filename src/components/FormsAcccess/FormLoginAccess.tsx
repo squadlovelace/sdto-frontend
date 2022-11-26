@@ -23,7 +23,7 @@ export const SectionFormInfo = () => {
 
       if (data.token) {
         localStorage.setItem('@user', JSON.stringify(data));
-        navigate('/');
+        navigate('/dashboardreceptor');
       } else {
         alert('Algo deu errado!');
       }

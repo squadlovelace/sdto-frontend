@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  dev:
+    build: .
+    container_name: web
+    volumes:
+      - '/app/node_modules'
+    ports:
+      - '80:8080'
+    entrypoint: npm run dev

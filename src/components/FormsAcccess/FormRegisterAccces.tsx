@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import Donator from '../../assets/donator.png';
 import Instituition from '../../assets/institution.png';
 import Receiver from '../../assets/receiver.png';
-import CardFormOption from './CardFormOption';
 import TextTitle from '../TextTitle/TextTitle';
+import CardFormOption from './CardFormOption';
 
 const FormRegisterAccces = () => (
   <section className="ml-[200px] mr-[180px] mb-[70px]">
@@ -20,6 +20,7 @@ const FormRegisterAccces = () => (
         src={Instituition}
         path="/formintituicao/firststep"
         alt="formulário de cadastro"
+        url="/formintituicao/firststep"
       />
       <CardFormOption
         TitleSituation="Sou um receptor"
@@ -27,6 +28,7 @@ const FormRegisterAccces = () => (
         src={Receiver}
         path="/formreceptor/firststep"
         alt="caixa de orgãos"
+        url="/formreceptor/firststep"
       />
       <CardFormOption
         TitleSituation="Sou um doador"
@@ -34,6 +36,7 @@ const FormRegisterAccces = () => (
         src={Donator}
         path="/formdonator/firststep"
         alt="mãos segurando um coração"
+        url="/formdonator/firststep"
       />
     </div>
     <Link to="/login">

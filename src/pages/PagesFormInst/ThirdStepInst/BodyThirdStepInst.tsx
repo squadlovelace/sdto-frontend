@@ -12,14 +12,12 @@ import { ColumItemLeft } from './ColumItemThirdLeft';
 import ColumItemRight from './ColumItemThirdRight';
 
 const schema = yup.object({
-  tiposanguineo: yup
-    .object()
-    .shape({
-      value: yup.string().required('O campo é obrigatório!'),
-    })
-    .required('O campo é obrigatório!')
-    .nullable(),
-  tipodedoador: yup
+  cidade: yup.string().required('O campo é obrigatório!'),
+  telefone: yup.string().required('O campo é obrigatório!'),
+  endereco: yup.string().required('O campo é obrigatório!'),
+  cep: yup.string().required('O campo é obrigatório!'),
+  complemento: yup.string().notRequired(),
+  uf: yup
     .object()
     .shape({
       value: yup.string().required('O campo é obrigatório!'),
@@ -58,7 +56,7 @@ const BodyThirdtStepInst = () => {
         </Link>
       </div>
       <form
-        className="formSteps flex flex-col pb-[130px]"
+        className="formSteps flex flex-col "
         onSubmit={handleSubmit(onSubmit)}
       >
         <TextTitle
@@ -66,12 +64,12 @@ const BodyThirdtStepInst = () => {
           textInfo="Preencha os campos a seguir com suas informações, o responsável da instituição."
         />
 
-        <div className="flex justify-between gap-[50px] mb-[80px]">
+        <div className="flex justify-between gap-[50px] mb-[100px]">
           <ColumItemLeft errors={errors} control={control} />
           <ColumItemRight errors={errors} control={control} />
         </div>
 
-        <div className="grid grid-cols-2 gap-10 mb-[150px]">
+        <div className="grid grid-cols-2 gap-10">
           <InputCheckbox
             htmlFor="termosDeServico"
             textLabel="Ao clicar nesse botão você concorda com os nossos Termos e Serviços"

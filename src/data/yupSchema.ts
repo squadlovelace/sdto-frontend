@@ -1,0 +1,107 @@
+import * as yup from 'yup';
+
+export const schemaDonatorSecondStep = yup.object({
+  endereco: yup.string().required('O campo é obrigatório!'),
+  cep: yup
+    .string()
+    .min(8, 'O CEP deve conter oito digitos')
+    .required('O campo é obrigatório!'),
+  telefone: yup
+    .string()
+    .min(9, 'O campo telefone deve ter nove digítos')
+    .required('O campo é obrigatório!'),
+  cidade: yup.string().required('O campo é obrigatório!'),
+  complemento: yup.string().required('O campo é obrigatório!'),
+  datadenascimento: yup
+    .date()
+    .nullable()
+    .transform((curr, orig) => (orig === '' ? null : curr))
+    .required('O campo é obrigatório'),
+
+  genero: yup
+    .object()
+    .shape({
+      value: yup.string().required('O campo é obrigatório!'),
+    })
+    .required('O campo é obrigatório!')
+    .nullable(),
+
+  uf: yup
+    .object()
+    .shape({
+      value: yup.string().required('O campo é obrigatório!'),
+    })
+    .required('O campo é obrigatório!')
+    .nullable(),
+});
+
+export const SchemaPefilDonator = yup.object({
+  endereco: yup.string().required('O campo é obrigatório!'),
+  cep: yup
+    .string()
+    .min(8, 'O campo inválido')
+    .required('O campo é obrigatório!'),
+  telefone: yup
+    .string()
+    .min(9, 'O campo inválido')
+    .required('O campo é obrigatório!'),
+  cidade: yup.string().required('O campo é obrigatório!'),
+  complemento: yup.string().notRequired(),
+  comorbidade: yup.string().notRequired(),
+
+  orgaos: yup
+    .array()
+    .min(1, 'campo inválido')
+    .of(
+      yup.object().shape({
+        value: yup.string().required('O campo é obrigatório!'),
+      })
+    )
+    .required('O campo é obrigatório!')
+    .nullable(),
+
+  genero: yup
+    .object()
+    .shape({
+      value: yup.string().required('O campo é obrigatório!'),
+    })
+    .required('O campo é obrigatório!')
+    .nullable(),
+
+  uf: yup
+    .object()
+    .shape({
+      value: yup.string().required('O campo é obrigatório!'),
+    })
+    .required('O campo é obrigatório!')
+    .nullable(),
+});
+
+export const PerilEditDonator = yup.object({
+  endereco: yup.string().required('O campo é obrigatório!'),
+  cidade: yup.string().required('O campo é obrigatório!'),
+  uf: yup
+    .object()
+    .shape({
+      value: yup.string().required('O campo é obrigatório!'),
+    })
+    .required('O campo é obrigatório!')
+    .nullable(),
+  cep: yup
+    .string()
+    .min(8, 'O campo é obrigatório!')
+    .required('O campo é obrigatório!'),
+  complemento: yup.string().notRequired(),
+  telefone: yup
+    .string()
+    .min(9, 'O campo inválido')
+    .required('O campo é obrigatório!'),
+
+  genero: yup
+    .object()
+    .shape({
+      value: yup.string().required('O campo é obrigatório!'),
+    })
+    .required('O campo é obrigatório!')
+    .nullable(),
+});

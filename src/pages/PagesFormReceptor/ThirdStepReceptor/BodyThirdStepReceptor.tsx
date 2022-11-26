@@ -6,9 +6,9 @@ import * as yup from 'yup';
 import ButtonFormRegister from '../../../components/Buttons/ButtonFormRegister';
 import ArrowLeft from '../../../components/FormRegister/ArrowLeft';
 import InputCheckbox from '../../../components/FormRegister/Inputs/InputCheckbox';
-import InputItem from '../../../components/FormRegister/Inputs/InputItem';
+import InputITextArea from '../../../components/FormRegister/Inputs/InputITextArea';
 import TextTitle from '../../../components/TextTitle/TextTitle';
-import { ValueThirdStep } from '../../../interfaces/FormDonatorStep';
+import { ThirdStepRecptor } from '../../../interfaces/FormDonatorStep';
 import { ColumItemLeft } from './ColumItemThirdLeft';
 import ColumItemRight from './ColumItemThirdRight';
 import { useApi } from '../../../hooks/useApi';
@@ -33,7 +33,7 @@ const BodyThirdtStepReceptor = () => {
     formState: { errors },
     reset,
     control,
-  } = useForm<ValueThirdStep>({
+  } = useForm<ThirdStepRecptor>({
     mode: 'onChange',
     resolver: yupResolver(schema),
   });
@@ -41,8 +41,9 @@ const BodyThirdtStepReceptor = () => {
   const navigate = useNavigate();
   const api = useApi();
 
-  const onSubmit: SubmitHandler<ValueThirdStep> = (data, e) => {
-    e?.preventDefault();
+  // const onSubmit: SubmitHandler<ValueThirdStep> = (data, e) => {
+  //   e?.preventDefault();
+  const onSubmit: SubmitHandler<ThirdStepRecptor> = (data) => {
     console.log({ data });
 
     localStorage.setItem('@receptor-step-3', JSON.stringify(data));
@@ -69,12 +70,12 @@ const BodyThirdtStepReceptor = () => {
           textInfo="Preencha os campos a seguir com as suas informações para cadastrar-se."
         />
 
-        <div className="flex justify-between gap-[50px] mb-[80px]">
+        <div className="flex justify-between gap-[50px]">
           <ColumItemLeft errors={errors} control={control} />
           <ColumItemRight errors={errors} control={control} />
         </div>
 
-        <InputItem
+        <InputITextArea
           htmlFor="comorbidade"
           placeholder="Digite sua comorbidade"
           textLabel="Comorbidade"
@@ -82,7 +83,7 @@ const BodyThirdtStepReceptor = () => {
           control={control}
         />
 
-        <div className="grid grid-cols-2 gap-10 mb-[150px]">
+        <div className="grid grid-cols-2 gap-10 mb-[20px]">
           <InputCheckbox
             htmlFor="termosDeServico"
             textLabel="Ao clicar nesse botão você concorda com os nossos Termos e Serviços"

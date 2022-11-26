@@ -6,9 +6,10 @@ export interface IFormValuegSecondStep {
   telefone: string;
   cidade: string;
   uf: string;
-  compleento: string;
+  tiposanguineo: string;
   datadenascimento: string;
   genero: string;
+  termosDeServico: boolean;
 }
 
 export interface IColumSecondStep {
@@ -20,9 +21,10 @@ export interface IColumSecondStep {
       telefone: string;
       cidade: string;
       uf: string;
-      compleento: string;
+      tiposanguineo: string;
       datadenascimento: string;
       genero: string;
+      termosDeServico: boolean;
     }>
   >;
 }
@@ -65,4 +67,12 @@ export interface IColumThirdStep {
 export interface SelectThirdStep extends IColumThirdStep {
   htmlFor: string;
   textLabel: string;
+}
+
+export interface ThirdStepRecptor {
+  orgaos: string[];
+  tiposanguineo: string;
+  rgct: string;
+  comorbidade: string;
+  termosDeServico: boolean;
 }

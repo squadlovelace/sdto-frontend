@@ -2,23 +2,21 @@ import { FormHelperText } from '@mui/material';
 import { Controller } from 'react-hook-form';
 import Select from 'react-select';
 
-import {
-  customStyles,
-  theme,
-} from '../../../components/FormRegister/Inputs/customStylesSelect';
-import { SelectSecondStep } from '../../../interfaces/FormDonatorStep';
-import { GenreOptions } from './DataGenre';
+import { customStyles, theme } from './customStylesSelect';
 
-export const SelectGenre = ({
+export const SelectInput = ({
   errors,
   control,
   htmlFor,
   textLabel,
-}: SelectSecondStep) => (
+  options,
+  placeholder,
+  valueMulti,
+}) => (
   <div className="flex flex-col gap-[10px] mb-5">
     <Controller
       control={control}
-      name="genero"
+      name={htmlFor}
       defaultValue=""
       render={({ field }) => (
         <>
@@ -29,20 +27,19 @@ export const SelectGenre = ({
             {textLabel}
           </label>
           <Select
-            className="bg-white font-text font-normal text-x4 text-roxo500 "
-            classNamePrefix="genero"
-            isClearable
-            isRtl={false}
-            placeholder="Qual é o seu gênero?"
-            isSearchable
-            options={GenreOptions}
+            isMulti={valueMulti}
+            placeholder={placeholder}
+            options={options}
             styles={customStyles}
             theme={theme}
+            className="bg-white font-text font-normal text-x4 text-roxo500 "
+            classNamePrefix="value"
+            isRtl={false}
             {...field}
           />
 
-          <FormHelperText className="text-[#db0000]">
-            {errors.genero ? errors.genero.message : ''}
+          <FormHelperText className="text-[#db0000] absolute  pt-[90px] pl-2">
+            {errors[htmlFor] ? errors[htmlFor].message : ''}
           </FormHelperText>
         </>
       )}

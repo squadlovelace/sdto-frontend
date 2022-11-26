@@ -1,9 +1,18 @@
 import { BrowserRouter, Route, Routes, useLocation, Navigate } from 'react-router-dom';
 import Home from './pages/Home/Layout';
 import Login from './pages/Login';
+import DashboardDoador from './pages/PagesDashboardDoador/Dashboard';
+import InstitutionDoador from './pages/PagesDashboardDoador/FrontPageDoador';
+import EditPerfilDoador from './pages/PagesDashboardDoador/Perfil/EditPerfil';
+import EditPerfiDashboardReceptor from './pages/PagesDashboardInstituition/EditPerfiDashboardReceptor';
+import EmployeeRegistration from './pages/PagesDashboardInstituition/EmployeeRegistration';
+import InstitutionColaborador from './pages/PagesDashboardInstituition/InstitutionColaborador';
+import ListColaborador from './pages/PagesDashboardInstituition/InstitutionColaborador/ListInstituition';
+import DashboardReceptor from './pages/PagesDashboardReceptor/Dashboard';
+import InstitutionReceptor from './pages/PagesDashboardReceptor/InstitutionReceptor';
+import EditPerfilReceptor from './pages/PagesDashboardReceptor/Perfil/EditPerfil';
 import FisrtStepDonator from './pages/PagesFormDonator/FirstStepDonator';
 import SecondStepDonator from './pages/PagesFormDonator/SecondStepDonator';
-import ThirdStepDonator from './pages/PagesFormDonator/ThirdStepDonator';
 import FirstStepInst from './pages/PagesFormInst/FirstStepInst';
 import SecondStepInst from './pages/PagesFormInst/SecondStepInst';
 import ThirdStepInst from './pages/PagesFormInst/ThirdStepInst';
@@ -22,7 +31,7 @@ const ProtectedRoute = ({ children }: { children: JSX.Element }) => {
   } else {
     return children;
   }
-  
+
 };
 
 function App() {
@@ -41,14 +50,36 @@ function App() {
             </ProtectedRoute>
           } />
         <Route path="/formdonator/secondstep" element={<SecondStepDonator />} />
-        <Route path="/formdonator/thirdstep" element={<ThirdStepDonator />} />
-        <Route path="/formreceptor/firststep" element={<FisrtStepReceptor/>} />
-        <Route path="/formreceptor/secondstep" element={<SecondStepReceptor/>} />
-        <Route path="/formreceptor/thirdtstep" element={<ThirdStepReceptor/>} />
+        <Route path="/formreceptor/firststep" element={<FisrtStepReceptor />} />
+        <Route
+          path="/formreceptor/secondstep"
+          element={<SecondStepReceptor />}
+        />
+        <Route
+          path="/formreceptor/thirdtstep"
+          element={<ThirdStepReceptor />}
+        />
         <Route path="/formintituicao/firststep" element={<FirstStepInst />} />
         <Route path="/formintituicao/secondstep" element={<SecondStepInst />} />
         <Route path="/formintituicao/thirdstep" element={<ThirdStepInst />} />
-
+        <Route path="/dashboardreceptor" element={<DashboardReceptor />} />
+        <Route path="/editperfilreceptor" element={<EditPerfilReceptor />} />
+        <Route
+          path="/lisrinstitutionsreceptor"
+          element={<InstitutionReceptor />}
+        />
+        <Route path="/dashboarddoador" element={<DashboardDoador />} />
+        <Route path="/editperfildoador" element={<EditPerfilDoador />} />
+        <Route path="/lisrinstitutionsdoador" element={<InstitutionDoador />} />
+        <Route
+          path="/dashboardregisterInstituition"
+          element={<EmployeeRegistration />}
+        />
+        <Route
+          path="dashboardeditinstituition"
+          element={<EditPerfiDashboardReceptor />}
+        />
+        <Route path="/lisrinstitutionscolaborador" element={<InstitutionColaborador />} />
       </Routes>
     </BrowserRouter>
   );

@@ -2,12 +2,9 @@ import { FormHelperText } from '@mui/material';
 import { Controller } from 'react-hook-form';
 import Select from 'react-select';
 
-import {
-  customStyles,
-  theme,
-} from '../../../components/FormRegister/Inputs/customStylesSelect';
-import { SelectSecondStep } from '../../../interfaces/FormDonatorStep';
-import { UfOptions } from './DataUf';
+import { SelectSecondStep } from '../../interfaces/FormDonatorStep';
+import { customStyles, theme } from './customStylesSelect';
+import { UfOptions } from './DataOptions/DataUf';
 
 export const SelectUf = ({
   errors,

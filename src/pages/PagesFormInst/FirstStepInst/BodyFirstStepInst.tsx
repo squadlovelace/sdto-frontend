@@ -13,19 +13,13 @@ import ColumItemRight from './ColumItemRight';
 
 const schema = yup.object({
   razao: yup.string().required('O campo é obrigatório!'),
-  endereco: yup
-    .string()
-    .required('O campo é obrigatório!'),
+  endereco: yup.string().required('O campo é obrigatório!'),
   cep: yup
     .string()
-    .min(8, 'o CEP deve conter 8 digitos')
+    .min(8, 'o campo é obrigatório')
     .required('O campo é obrigatório!'),
-  cidade: yup
-    .string()
-    .required('O campo é obrigatório!'),
-  cnpj: yup
-    .string()
-    .required('O campo é obrigatório!'),
+  cidade: yup.string().required('O campo é obrigatório!'),
+  cnpj: yup.string().required('O campo é obrigatório!'),
 });
 
 const BodyFirstStepInst = () => {

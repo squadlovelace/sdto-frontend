@@ -27,7 +27,7 @@ const CssTextField = styled(TextField)({
 });
 
 const InputItem = ({ htmlFor, placeholder, textLabel, errors, control }) => (
-  <div className="flex flex-col gap-[10px] mb-8">
+  <div className="flex flex-col  gap-[10px] mb-8">
     <Controller
       control={control}
       name={htmlFor}

@@ -8,6 +8,7 @@ interface Props {
   src: string;
   alt: string;
   path: string;
+  url: string;
 }
 
 const CardFormOption = ({
@@ -16,6 +17,7 @@ const CardFormOption = ({
   src,
   alt,
   path,
+  url,
 }: Props) => (
   <div className="flex justify-between border-solid border-[1px] border-[#dbdbdb] rounded-[7px] pl-10 pr-5 py-[30px] items-center ">
     <div className="flex  gap-10 items-center">
@@ -29,7 +31,8 @@ const CardFormOption = ({
         </p>
       </div>
     </div>
-    <Link to={path}>
+    <Link to={path} />
+    <Link to={url}>
       <img
         src={ArrowRight}
         alt="flecha apontando para direita"

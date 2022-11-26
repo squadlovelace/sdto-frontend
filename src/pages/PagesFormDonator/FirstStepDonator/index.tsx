@@ -1,4 +1,4 @@
-import Step1 from '../../../assets/Step1.png';
+import Step1 from '../../../assets/DonatoFisrtStep.png';
 import DivPurple from '../../../components/DivPurple/DivPurple';
 import HeaderFormRegister from '../../../components/FormRegister/HeaderFormRegister';
 import FooterFormAccces from '../../../components/FormsAcccess/FooterFormAccces';

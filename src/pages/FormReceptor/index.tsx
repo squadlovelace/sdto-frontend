@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import FisrtStepReceptor  from '../PagesFormReceptor/FisrtStepReceptor';
-import SecondStepReceptor  from '../PagesFormReceptor/SecondStepReceptor';
+
+import FisrtStepReceptor from '../PagesFormReceptor/FisrtStepReceptor';
+import SecondStepReceptor from '../PagesFormReceptor/SecondStepReceptor';
 import ThirdStepReceptor from '../PagesFormReceptor/ThirdStepReceptor';
 
 const FormReceptor = () => {

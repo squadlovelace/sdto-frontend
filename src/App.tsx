@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import DashboardDoador from './pages/PagesDashboardDoador/Dashboard';
 import InstitutionDoador from './pages/PagesDashboardDoador/FrontPageDoador';
 import EditPerfilDoador from './pages/PagesDashboardDoador/Perfil/EditPerfil';
+import EditPerfiDashboardReceptor from './pages/PagesDashboardInstituition/EditPerfiDashboardReceptor';
 import EmployeeRegistration from './pages/PagesDashboardInstituition/EmployeeRegistration';
 import DashboardReceptor from './pages/PagesDashboardReceptor/Dashboard';
 import InstitutionReceptor from './pages/PagesDashboardReceptor/InstitutionReceptor';
@@ -54,6 +55,10 @@ function App() {
         <Route
           path="/dashboardregisterInstituition"
           element={<EmployeeRegistration />}
+        />
+        <Route
+          path="dashboardeditinstituition"
+          element={<EditPerfiDashboardReceptor />}
         />
       </Routes>
     </BrowserRouter>

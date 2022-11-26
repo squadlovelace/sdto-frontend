@@ -19,11 +19,7 @@ const SidebarInstituition = () => (
         text="Editar perfil"
         url="/editperfilreceptor"
       />
-      <Itemsside
-        icon={<ContentPasteIcon />}
-        text="Instituições"
-        url="/lisrinstitutionsreceptor"
-      />
+
       <ItemEmployee icon={<ContentPasteIcon />} text="Colaborador" />
     </div>
     <Avatar initalName="US" nameUser="USER" typeUser="Receptor" />

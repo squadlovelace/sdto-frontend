@@ -7,6 +7,8 @@ import InstitutionDoador from './pages/PagesDashboardDoador/FrontPageDoador';
 import EditPerfilDoador from './pages/PagesDashboardDoador/Perfil/EditPerfil';
 import EditPerfiDashboardReceptor from './pages/PagesDashboardInstituition/EditPerfiDashboardReceptor';
 import EmployeeRegistration from './pages/PagesDashboardInstituition/EmployeeRegistration';
+import InstitutionColaborador from './pages/PagesDashboardInstituition/InstitutionColaborador';
+import ListColaborador from './pages/PagesDashboardInstituition/InstitutionColaborador/ListInstituition';
 import DashboardReceptor from './pages/PagesDashboardReceptor/Dashboard';
 import InstitutionReceptor from './pages/PagesDashboardReceptor/InstitutionReceptor';
 import EditPerfilReceptor from './pages/PagesDashboardReceptor/Perfil/EditPerfil';
@@ -60,6 +62,7 @@ function App() {
           path="dashboardeditinstituition"
           element={<EditPerfiDashboardReceptor />}
         />
+        <Route path="/lisrinstitutionscolaborador" element={<InstitutionColaborador />} />
       </Routes>
     </BrowserRouter>
   );

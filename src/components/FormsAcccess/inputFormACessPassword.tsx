@@ -7,7 +7,7 @@ interface Props {
   onChange?: string | any;
 }
 
-const InputFormACcces = ({
+const InputFormACcesPassword = ({
   label,
   placeholder,
   htmlFor,
@@ -22,7 +22,7 @@ const InputFormACcces = ({
       {label}
     </label>
     <input
-      type="text"
+      type="password"
       placeholder={placeholder}
       className="h-[48px] border-solid border-2 border-[#DDDCDD] rounded-[7px] focus:outline-none focus:ring-roxo500 focus:border-roxo500 pl-5"
       value={value}
@@ -31,4 +31,4 @@ const InputFormACcces = ({
   </div>
 );
 
-export default InputFormACcces;
+export default InputFormACcesPassword;

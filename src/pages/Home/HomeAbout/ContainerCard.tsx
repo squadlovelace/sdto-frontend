@@ -19,7 +19,7 @@ const ContainerCard = () => (
       />
       <CardAbout
         title="O que fazemos?"
-        text="Temos o intúito de incentivar o interesse da população em conhecer o processo de doação e buscar tornar-se um possível doador."
+        text="Temos o intuito de incentivar o interesse da população em conhecer o processo de doação e buscar tornar-se um possível doador."
       />
     </div>
   </div>

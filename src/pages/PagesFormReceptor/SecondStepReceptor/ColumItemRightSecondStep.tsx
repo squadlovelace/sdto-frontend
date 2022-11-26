@@ -17,7 +17,10 @@ const ColumItemRightSecondStep = ({ errors, control }: IColumSecondStep) => (
           control={control}
         />
       </div>
-      <SelectUf errors={errors} control={control} htmlFor="uf" textLabel="UF" />
+      {/* <SelectUf errors={errors} control={control} htmlFor="uf" textLabel="UF" /> */}
+      <InputItem
+        errors={errors} control={control} htmlFor="uf" textLabel="UF" placeholder="UF"
+      />
     </div>
 
     <InputItem

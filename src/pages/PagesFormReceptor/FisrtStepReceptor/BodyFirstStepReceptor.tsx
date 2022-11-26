@@ -54,8 +54,8 @@ const BodyFirstStepReceptor = () => {
   const onSubmit: SubmitHandler<IFormValuegFirstStep> = (data, e) => {
     e?.preventDefault();
     console.log({ data });
+    localStorage.setItem('@receptor-step-1', JSON.stringify(data));
 
-    console.log('deu certo');
     navigate('/formreceptor/secondstep');
     reset();
   };

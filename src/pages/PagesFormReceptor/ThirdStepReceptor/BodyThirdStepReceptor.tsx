@@ -11,28 +11,20 @@ import TextTitle from '../../../components/TextTitle/TextTitle';
 import { ThirdStepRecptor } from '../../../interfaces/FormDonatorStep';
 import { ColumItemLeft } from './ColumItemThirdLeft';
 import ColumItemRight from './ColumItemThirdRight';
+import { useApi } from '../../../hooks/useApi';
 
 const schema = yup.object({
-  rgct: yup.string().required('O campo é obrigatório!'),
-  orgaos: yup
-    .array()
-    .min(1, 'campo inválido')
-    .of(
-      yup.object().shape({
-        value: yup.string().required('O campo é obrigatório!'),
-      })
-    )
-    .required('O campo é obrigatório!')
-    .nullable(),
+  orgao: yup
+  .string()
+  .required('O campo é obrigatório!'),
   tiposanguineo: yup
-    .object()
-    .shape({
-      value: yup.string().required('O campo é obrigatório!'),
-    })
+    .string()
     .required('O campo é obrigatório!')
     .nullable(),
-  comorbidade: yup.string().notRequired(),
-  termosDeServico: yup.bool().oneOf([true], 'O termos e seviços é obrigatório'),
+  comorbidade: yup
+  .string()
+  .required('O campo é obrigatório!'),
+  rgct: yup.string().required('O campo é obrigatório!'),
 });
 
 const BodyThirdtStepReceptor = () => {
@@ -47,12 +39,17 @@ const BodyThirdtStepReceptor = () => {
   });
 
   const navigate = useNavigate();
+  const api = useApi();
 
+  // const onSubmit: SubmitHandler<ValueThirdStep> = (data, e) => {
+  //   e?.preventDefault();
   const onSubmit: SubmitHandler<ThirdStepRecptor> = (data) => {
     console.log({ data });
-    console.log('deu certo');
-    navigate('/login');
 
+    localStorage.setItem('@receptor-step-3', JSON.stringify(data));
+    api.createReceiver();
+
+    navigate('/login');
     reset();
   };
 
@@ -64,7 +61,8 @@ const BodyThirdtStepReceptor = () => {
         </Link>
       </div>
       <form
-        className="formSteps flex flex-col "
+        id='form'
+        className="formSteps flex flex-col pb-[130px]"
         onSubmit={handleSubmit(onSubmit)}
       >
         <TextTitle

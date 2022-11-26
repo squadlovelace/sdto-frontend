@@ -7,9 +7,10 @@ interface Props {
   link: string;
   alt: string;
   cardInstitution?: string;
+  path: string;
 }
 
-const CardLink = ({ img, text, alt, link, cardInstitution }: Props) => (
+const CardLink = ({ img, text, alt, link, cardInstitution, path }: Props) => (
   <div className="h-360 w-260 rounded-lg	 bg-roxo500">
     <div className={`bg-white h-200 rounded-t-lg	mx-auto ${cardInstitution} `}>
       <img

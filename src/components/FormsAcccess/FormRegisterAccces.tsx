@@ -18,18 +18,21 @@ const FormRegisterAccces = () => (
         TitleSituation="Sou uma instituição"
         textSituation="Clique aqui para se cadastrar como uma instituição"
         src={Instituition}
+        path="/formintituicao/firststep"
         alt="formulário de cadastro"
       />
       <CardFormOption
         TitleSituation="Sou um receptor"
         textSituation="Clique aqui para se cadastrar como um receptor "
         src={Receiver}
+        path="/formreceptor/firststep"
         alt="caixa de orgãos"
       />
       <CardFormOption
         TitleSituation="Sou um doador"
         textSituation="CLique aqui para se cadastrar como um doador "
         src={Donator}
+        path="/formdonator/firststep"
         alt="mãos segurando um coração"
       />
     </div>

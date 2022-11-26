@@ -7,9 +7,16 @@ interface Props {
   textSituation: string;
   src: string;
   alt: string;
+  path: string;
 }
 
-const CardFormOption = ({ TitleSituation, textSituation, src, alt }: Props) => (
+const CardFormOption = ({
+  TitleSituation,
+  textSituation,
+  src,
+  alt,
+  path,
+}: Props) => (
   <div className="flex justify-between border-solid border-[1px] border-[#dbdbdb] rounded-[7px] pl-10 pr-5 py-[30px] items-center ">
     <div className="flex  gap-10 items-center">
       <img src={src} alt={alt} />
@@ -22,7 +29,7 @@ const CardFormOption = ({ TitleSituation, textSituation, src, alt }: Props) => (
         </p>
       </div>
     </div>
-    <Link to="/formdonator/firststep">
+    <Link to={path}>
       <img
         src={ArrowRight}
         alt="flecha apontando para direita"

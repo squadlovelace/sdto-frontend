@@ -6,6 +6,7 @@ import ThirdStepReceptor from '../PagesFormReceptor/ThirdStepReceptor';
 const FormReceptor = () => {
   const steps = [1, 2, 3];
   const [step, setStep] = useState(steps[0]);
+  const [formData, setFormData] = useState({});
   const handleStep = (i: number) => {
     setStep(steps[i]);
   };

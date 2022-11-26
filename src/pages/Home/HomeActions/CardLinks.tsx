@@ -10,6 +10,7 @@ const CardLinks = () => (
       alt="icone de uma mão segurando um coração"
       text="Está interessado em doar orgãos?"
       link="Cadastrar-se"
+      path="/formdonator/firststep"
     />
 
     <CardLink

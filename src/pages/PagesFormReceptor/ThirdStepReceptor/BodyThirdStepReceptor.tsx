@@ -11,20 +11,20 @@ import TextTitle from '../../../components/TextTitle/TextTitle';
 import { ValueThirdStep } from '../../../interfaces/FormDonatorStep';
 import { ColumItemLeft } from './ColumItemThirdLeft';
 import ColumItemRight from './ColumItemThirdRight';
+import { useApi } from '../../../hooks/useApi';
 
 const schema = yup.object({
-  cep: yup
+  orgao: yup
   .string()
-  .min(8, 'O CEP deve conter oito digitos')
   .required('O campo é obrigatório!'),
-  telefone: yup
+  tiposanguineo: yup
+    .string()
+    .required('O campo é obrigatório!')
+    .nullable(),
+  comorbidade: yup
   .string()
-  .min(9, 'O campo telefone deve ter nove digítos')
   .required('O campo é obrigatório!'),
-  cidade: yup.string().required('O campo é obrigatório!'),
-  complemento: yup.string().required('O campo é obrigatório!'),
-  uf: yup.string().required('O campo é obrigatório!'),
-  termosDeServico: yup.bool().oneOf([true], 'O termos e seviços é obrigatório'),
+  rgct: yup.string().required('O campo é obrigatório!'),
 });
 
 const BodyThirdtStepReceptor = () => {
@@ -39,12 +39,16 @@ const BodyThirdtStepReceptor = () => {
   });
 
   const navigate = useNavigate();
+  const api = useApi();
 
-  const onSubmit: SubmitHandler<ValueThirdStep> = (data) => {
+  const onSubmit: SubmitHandler<ValueThirdStep> = (data, e) => {
+    e?.preventDefault();
     console.log({ data });
-    console.log('deu certo');
-    navigate('/login');
 
+    localStorage.setItem('@receptor-step-3', JSON.stringify(data));
+    api.createReceiver();
+
+    navigate('/login');
     reset();
   };
 
@@ -56,6 +60,7 @@ const BodyThirdtStepReceptor = () => {
         </Link>
       </div>
       <form
+        id='form'
         className="formSteps flex flex-col pb-[130px]"
         onSubmit={handleSubmit(onSubmit)}
       >

@@ -33,9 +33,22 @@ export interface SelectSecondStep extends IColumSecondStep {
 }
 
 export interface ValueThirdStep {
+  orgao: string,
+  comorbidade: string,
+  rgct: string,
   tiposanguineo: string;
-  tipodedoador: string;
+  tipodedoador?: string;
   termosDeServico: boolean;
+}
+export interface IFormValuegSecondStep {
+  endereco: string;
+  cep: string;
+  telefone: string;
+  cidade: string;
+  uf: string;
+  complemento: string;
+  datadenascimento: string;
+  genero: string;
 }
 
 export interface IColumThirdStep {

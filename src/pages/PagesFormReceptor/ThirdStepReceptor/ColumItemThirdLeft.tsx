@@ -4,15 +4,23 @@ import SelectedTypeBlood from './SelectedTypeBlood.';
 
 export const ColumItemLeft = ({ errors, control }: IColumThirdStep) => (
   <div className="flex flex-col flex-1">
-    <SelectedTypeBlood
+    {/* <SelectedTypeBlood
       errors={errors}
       control={control}
       htmlFor="tiposanguineo"
       textLabel="Tipo sanguíneo"
+    /> */}
+
+    <InputItem
+      errors={errors}
+      control={control}
+      htmlFor="tiposanguineo"
+      textLabel="Tipo sanguíneo"
+      placeholder="Tipo sanguíneo"
     />
 
     <InputItem
-      htmlFor="orgao  "
+      htmlFor="orgao"
       placeholder="Digite o órgão que necessita"
       textLabel="Órgão"
       errors={errors}

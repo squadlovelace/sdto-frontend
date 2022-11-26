@@ -1,5 +1,6 @@
 import ButtonFormAccces from '../Buttons/ButtonFormAccces';
 import InputFormACcces from './InputFormACcces';
+import InputFormACcesPassword from './inputFormACessPassword';
 import TextTitle from '../TextTitle/TextTitle';
 import { SetStateAction, useContext, useState } from 'react';
 import { authContext } from '../../contexts/auth/authContext';
@@ -45,7 +46,7 @@ export const SectionFormInfo = () => {
             setCpf(e.target.value)
           }
         />
-        <InputFormACcces
+        <InputFormACcesPassword
           htmlFor="password"
           label="Senha"
           placeholder="Digite a sua senha"

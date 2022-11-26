@@ -29,17 +29,11 @@ const schema = yup.object({
     .transform((curr, orig) => (orig === '' ? null : curr))
     .required('O campo é obrigatório'),
   genero: yup
-    .object()
-    .shape({
-      value: yup.string().required('O campo é obrigatório!'),
-    })
+    .string()
     .required('O campo é obrigatório!')
     .nullable(),
   uf: yup
-    .object()
-    .shape({
-      value: yup.string().required('O campo é obrigatório!'),
-    })
+    .string()
     .required('O campo é obrigatório!')
     .nullable(),
 });
@@ -60,7 +54,8 @@ const BodySecondReceptor = () => {
     e?.preventDefault();
     console.log({ data });
 
-    console.log('deu certo');
+    localStorage.setItem('@receptor-step-2', JSON.stringify(data));
+
     navigate('/formreceptor/thirdtstep');
   };
   return (
